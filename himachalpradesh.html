@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sikkim.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <title>Himachal Pradesh</title>
+  <style>
+    .tab-contents {
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      padding: 40px;
+      border-radius: 10px;
+      display: none;
+    }
+    .logo{
+      width: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 20px;
+    }
+    .welcome{
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img src="images/logo.jpg" style="height: 100px; width: 150px;">
+  </div>
+  <section>
+    <header>
+      <div class="header">
+        <div class="container">
+          <span class="slider" id="slider1"></span>
+          <span class="slider" id="slider2"></span>
+          <span class="slider" id="slider3"></span>
+          <span class="slider" id="slider4"></span>
+          <span class="slider" id="slider5"></span>
+
+          <div class="imgContainer">
+            <div class="slide_div" id="slide_1">
+              <img src="images/hp1.jpg" class="img" id="img1" />
+              <a href="#slider1" class="button" id="button1"></a>
+            </div>
+            <div class="slide_div" id="slide_2">
+              <img src="images/hp2.jpg" class="img" id="img2" />
+              <a href="#slider2" class="button" id="button2"></a>
+            </div>
+            <div class="slide_div" id="slide_3">
+              <img src="images/hp3.jpg" class="img" id="img3" />
+              <a href="#slider3" class="button" id="button3"></a>
+            </div>
+            <div class="slide_div" id="slide_4">
+              <img src="images/hp4.jpg" class="img" id="img4" />
+              <a href="#slider4" class="button" id="button4"></a>
+            </div>
+            <div class="slide_div" id="slide_5">
+              <img src="images/hp5.jpg" class="img" id="img5" />
+              <a href="#slider5" class="button" id="button5"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="welcome">
+        <h1>Himachal Pradhesh</h1>
+      </div>
+
+      <div class="options">
+        <nav class="content-titles">
+          <ul>
+            <li>
+              <a class="tab-links active-link" onclick="opentab('overview')">Overview</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('best-time-to-visit')">Best Time to Visit</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('how-to-reach')">How to Reach</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('places-to-visit')">Places to Visit</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('things-to-do')">Things to Do</a>
+            </li>
+            
+            <li><a class="tab-links" onclick="opentab('map')">Map</a></li>
+          </ul>
+        </nav>
+        <div class="tab-contents active-tab" id="overview" style="background-color: #d0f6cf">
+          <h2>About <span>Himachal Pradesh</span></h2>
+          <br />
+          <p>
+            Himachal Pradesh is among the most visited top mountain tourist places in North India, Himalayas region. 
+            It gifts you with memories that last for a lifetime. Valleys, mountains, ancient monasteries, historical sites, lakes, mountain passes! - The list never ends. The wanderlust in you will be compelled to stay here forever. 
+            Pick up any Himachal travel guide, chances are, you will be hooked on to its beauty within a few minutes. 
+            This state has so much to offer. Indeed, it’s a top tourist attraction in North India!
+          </p>
+          <br />
+          <p>
+            Himachal Pradesh tourism has something in store for nature lovers. 
+            Its beauty lies in its diversity. You have lush valleys like Kinnaur, Kullu and Kangra & barren terrains of Lahaul & Spiti. 
+            Tales of Malana fascinate tourists as much as the Buddhist culture in Mcleodganj. Exploring Dalhousie, with its rich colonial past, is sheer delight.
+            The famous Hill stations like Shimla, Kullu & Manali are dotted with meadows, orchards, quaint villages & rich colonial past.
+            Any sightseeing tour of Himachal should include its wonderful lakes. Quiet and still, they reflect the surroundings, both literally and symbolically. 
+            A few of the famous lakes are Renuka, Rewalsar, Prashar, Suraj Tal & Chandratal. 
+            The views of the Himalayan Ranges fill you with excitement, from head to toe.
+          </p>
+         
+          <br />
+
+          <p>
+          The varied landscape of Himachal also lends itself to various adventure activities. 
+          The thrill of river rafting can be enjoyed at River Sutlej at Tattapani near Shimla, River Beas near Kullu, River Ravi near Chamba, River Chenab and Spiti in Lahaul and Spiti district.
+          There are also a lot of opportunities for trekking, for both amateur & advanced trekkers. 
+          Some of the famous treks are Pin Parvati Pass, Hampta Pass, Kinnaur Kailash & Chandratal.
+          Soar high with paragliding at Bir Billing, the second highest paragliding spot in the world. 
+          Skiing, angling, rock climbing, camping & mountaineering are other top adventure sports you can enjoy.
+          </p>
+          <br />
+          <p>
+            
+          </p>
+         
+        </div>
+
+        <div class="tab-contents" id="best-time-to-visit" style="background-color: #dcbfff">
+          <h2>Best Time to Visit in <span>Himachal Pradesh</span></h2>
+          <br />
+          <h3>Summer in Himachal Pradesh</h3>
+          <p>
+            Summers in Himachal start from mid-April and last till June. 
+            In some places like Chamba, Mandi and Dharamshala, the temperatures go as high as 35 degree celsius. 
+            During the same time, Shimla, Dalhousie and Kinnaur enjoy pleasant weather, with the temperature not rising above 27 degree celsius.
+            Water sports, trekking, visiting the monasteries, exploring the valleys and lakes, and any sightseeing in general, is best enjoyed during this season.
+          <br />
+          <h3>Monsoon in Himachal Pradesh</h3>
+          <p>
+            Do not expect a lot of things to do Himachal Pradesh if you visit it during the monsoons. 
+            Rains cause frequent landslides, and driving on the roads is both challenging and dangerous at times. 
+            The monsoon season starts from July and extends till September. 
+            A lot of activities, including trekking, is out of the question. Of course, the landscape, especially after the rains, are a soothing sight to the eyes. 
+            You may even be able to visit a few places, but apart from that, you will not be able to do much during this time.
+          </p>
+          <br />
+        </div>
+        <div class="tab-contents" id="how-to-reach" style="background-color: #f1f5a8">
+          <h2>How to Reach <span>Himachal Pradesh</span></h2>
+          <br />
+          <p>
+            A popular tourist destination in North India, Himachal Pradesh is also easily accessible and boasts good air, rail, and road connecetivity. 
+            The state is home to UNESCO recognized World Heritage Site Kalka-Shimla Toy Train. 
+            It is also well-connected to various national and state highways and has an excellent roadways transport arrangement.
+          </p>
+          <br />
+          <h3>By Air:</h3>
+          <p>
+            Himachal has 3 operational domestic airports namely, Jubbarhatti Airport near Shimla, Bhuntar Airport near Manali and lastly Gaggal Airport in Kangra. 
+            One can easily get a flight from Delhi to any of these airports. 
+            Flying to Himachal cuts off the travelling time to more than half, making it an easy and comfortable way of transfer. 
+            The nearest international airports to Himachal are at Chandigarh and Delhi.
+          </p>
+          <br />
+          <h3>By Road:</h3>
+          <p>
+            The easiest hence the most preferable way of reaching Himachal is via road. 
+            There are HRTC buses as well as private buses operating from Delhi's Kashmere Gate ISBT, Majnu Ka Teela and Anand Vihar ISBT providing with 8-18 hours overnight journeys to Himachal. 
+            The buses directly take you to the main areas of Himachal such as Shimla, Manali, Dharamshala, Aut, Bhuntar etc. 
+            From here you can take a taxi or hop on to a local bus and reach desired destinations in Himachal Pradesh. 
+            There are around 20 national highways including NH-1A that connects Himachal to many cities and towns of India. 
+            Numerous state highways also boast excellent internal connectivity in Himachal Pradesh.
+          </p>
+          <br />
+          <h3>By Rail:</h3>
+          <p>
+            Due to the mountainous terrains, only a few places in Himachal have rail connectivity. 
+            The Kangra Valley Railway is a major railway connect serving from Pathankot in Punjab to Jogindernagar in Himachal. 
+            From here one could hire a taxi or travel on a local bus to reach their required destination.
+            Another scenic rail route is the Kalka (Haryana)- Shimla (Himachal) rail connect. 
+            The toy train running on this route has been declared as the UNESCO World Heritage Site, and why not? It passes through 102 tunnels, runs for approx 96 km and has 900 curves. 
+            Moving through the lush green mountains and enchanting valleys, travelling in it is indeed a treat to one's eye. 
+            If opting for this route, one can reach Shimla in around 6 hours. 
+            It passes through some passenger stations, namely Solan, Barog, Totu, and Tara Devi, etc.         
+            Other trains that operate on the Kalka-Shimla route are- Rail Motor Car (14 passengers), Shimla Express, Himalayan Queen, Shimla Kalka Passenger and Shivalik Deluxe Express.
+          </p>
+        </div>
+        <div class="tab-contents" id="places-to-visit" style="background-color: #f7ded0">
+          <h2>Places to visit in <span>Himachal Pradesh</span></h2>
+          <br />
+          <h3>Kullu Manali</h3>
+          <p>
+            Inspiring beautiful views of snow-capped mountains and wonderful waterfalls can be found in this serene hill station. 
+            Sports such as hiking, skiing, paragliding, and river rafting make this place an ideal place to visit for adventure seekers. 
+            Kullu Manali is known for having a very rich cultural heritage including historic temples, vibrant festivals, and welcoming locals who make their guests feel at home; these are some of the reasons that make Kullu Manali worth a visit. 
+            Kullu Manali is the ideal location to make lifelong memories, whether you're looking for peace in nature, heart-pounding activities, or a look at local customs.
+            <br>
+          </p>
+          <br />
+          <h3>Shimla</h3>
+          <p>
+            It is a must visit hill station in Himachal Pradesh that charms tourists with its allure and picturesque beauty. 
+            Shimla, which lies hidden away in the majestic Himalayas, provides a lovely respite from the hectic pace of the city. 
+            The colonial buildings, lush vegetation, and expansive views of snow-covered mountains make the city famous. 
+            The Viceregal Lodge and Christ Church are two historical sites that may be explored by visitors, and they can also buy local handicrafts and woolens while strolling along Mall Road.
+          </p>
+          <br />
+          <h3>Dharamshala</h3>
+          <p>
+            Dharamshala is the perfect place for nature lovers and adventure seekers in Himachal Pradesh as it offers stunning views of snow-covered mountains, lush valleys, and bursting waterfalls. 
+            Visitors can also go on treks to Triund and Kareri Lake, explore the Buddhist monasteries, participate in yoga and meditation retreats, or can simply enjoy the serene atmosphere of this spiritual paradise. 
+            Additionally, Dharamshala has a bustling Tibetan market where you may buy authentic fabrics, handicrafts, and artifacts from Tibet. 
+            Discover Dharamshala's serenity and spiritual character; you'll come away mesmerized and refreshed.
+          </p>
+          <br />
+          <h3>Kufri</h3>
+          <p>
+            Kufri is renowned for its breathtaking natural scenery, peaceful ambiance, and exhilarating adventure activities. 
+            Skiing and horseback riding are just a few of the thrilling activities that are available for visitors. 
+            The Himalayan Nature Park where visitors can see a variety of flora and animals is also located in the town. 
+            Kufri is the perfect getaway for nature lovers and adventure seekers alike, offering a lovely respite from the rush of daily life with its peaceful atmosphere and stunning scenery.
+          </p>
+        </div>
+        <div class="tab-contents" id="things-to-do" style="background-color: #e5e1da">
+          <h2>Things to do in <span>Himachal Pradesh</span></h2><br>
+          <p>
+            Himachal Pradesh tourism has something in store for nature lovers. Its beauty lies in its diversity. 
+            You have lush valleys like Kinnaur, Kullu and Kangra & barren terrains of Lahaul & Spiti. 
+            Tales of Malana fascinate tourists as much as the Buddhist culture in Mcleodganj. Exploring Dalhousie, with its rich colonial past, is sheer delight. 
+            The famous Hill stations like Shimla, Kullu & Manali are dotted with meadows, orchards, quaint villages & rich colonial past.
+            Any sightseeing tour of Himachal should include its wonderful lakes. Quiet and still, they reflect the surroundings, both literally and symbolically. 
+            A few of the famous lakes are Renuka, Rewalsar, Prashar, Suraj Tal & Chandratal. The views of the Himalayan Ranges fill you with excitement, from head to toe.
+          </p>
+          <br />
+          <p>
+            he varied landscape of Himachal also lends itself to various adventure activities. The thrill of river rafting can be enjoyed at River Sutlej at Tattapani near Shimla, River Beas near Kullu, River Ravi near Chamba, River Chenab and Spiti in Lahaul and Spiti district.
+            There are also a lot of opportunities for trekking, for both amateur & advanced trekkers. Some of the famous treks are Pin Parvati Pass, Hampta Pass, Kinnaur Kailash & Chandratal.            
+            Soar high with paragliding at Bir Billing, the second highest paragliding spot in the world. Skiing, angling, rock climbing, camping & mountaineering are other top adventure sports you can enjoy.
+            <br>
+            History buffs travelling to Himachal also have something to look forward to. 
+            There are several heritage sites which are top tourist attractions, for both their architecture & historical magnificence. 
+            From ancient forts, colonial mansions, lush country sides of ancient traditions, magnificent havelis to elegant British colonial architecture, you will be mesmerized to see its breathtaking heritage charm.
+            A few of these are Jandrighat Palace in Dalhousie, Rang Mahal in Chamba, Bahadurpur Fort in Bilaspur, Padam Palace in Rampur, and Kangra Fort in Kangra.
+          </p>
+        </div>
+        <div class="tab-contents" id="map" style="width: 1000px; height: 400px"></div>
+      </div>
+    </header>
+  </section>
+
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+        if (tabcontent.id === tabname) {
+          tabcontent.classList.add("active-tab");
+        }
+      }
+      event.currentTarget.classList.add("active-link");
+    }
+
+
+    // Creating map options
+    var mapOptions = {
+            center: [27.2134142,88.6797401],
+            zoom:9
+        }
+
+
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        // Creating a marker
+        var marker = L.marker([32.2432 , 77.1892]).addTo(map);
+        var marker = L.marker([31.0979, 77.2678]).addTo(map);
+        var marker = L.marker([31.1048 , 77.1734]).addTo(map);
+        var marker = L.marker([32.2190 , 76.3234]).addTo(map);
+       
+
+      
+  </script>
+</body>
+
+</html>

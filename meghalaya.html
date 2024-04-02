@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sikkim.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <title>meghalaya</title>
+  <style>
+    .tab-contents {
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      padding: 40px;
+      border-radius: 10px;
+      display: none;
+    }
+    .logo{
+      width: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 20px;
+    }
+    .welcome{
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img src="images/logo.jpg" style="height: 100px; width: 150px;">
+  </div>
+  <section>
+    <header>
+      <div class="header">
+        <div class="container">
+          <span class="slider" id="slider1"></span>
+          <span class="slider" id="slider2"></span>
+          <span class="slider" id="slider3"></span>
+          <span class="slider" id="slider4"></span>
+          <span class="slider" id="slider5"></span>
+
+          <div class="imgContainer">
+            <div class="slide_div" id="slide_1">
+              <img src="images/meghalaya-2.jpg" class="img" id="img1" />
+              <a href="#slider1" class="button" id="button1"></a>
+            </div>
+            <div class="slide_div" id="slide_2">
+              <img src="images/meghalaya-3.jpg" class="img" id="img2" />
+              <a href="#slider2" class="button" id="button2"></a>
+            </div>
+            <div class="slide_div" id="slide_3">
+              <img src="images/meghalaya-4.jpg" class="img" id="img3" />
+              <a href="#slider3" class="button" id="button3"></a>
+            </div>
+            <div class="slide_div" id="slide_4">
+              <img src="images/meghalaya-5.jpeg" class="img" id="img4" />
+              <a href="#slider4" class="button" id="button4"></a>
+            </div>
+            <div class="slide_div" id="slide_5">
+              <img src="images/meghalaya-6.jpg" class="img" id="img5" />
+              <a href="#slider5" class="button" id="button5"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="welcome">
+        <h1>Meghalaya</h1>
+      </div>
+
+      <div class="options">
+        <nav class="content-titles">
+          <ul>
+            <li>
+              <a class="tab-links active-link" onclick="opentab('overview')">Overview</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('best-time-to-visit')">Best Time to Visit</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('how-to-reach')">How to Reach</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('places-to-visit')">Places to Visit</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('things-to-do')">Things to Do</a>
+            </li>
+            
+            <li><a class="tab-links" onclick="opentab('map')">Map</a></li>
+          </ul>
+        </nav>
+        <div class="tab-contents active-tab" id="overview" style="background-color: #d0f6cf">
+          <h2>About <span>Meghalaya</span></h2>
+          <br />
+          <p>
+            meghalaya is a landlocked state in the north-eastern region of India. 
+            It is bordered by the Indian states of Arunachal Pradesh to the north,
+            Assam to the west, Manipur to the south, and the Naga Self-Administered
+            Zone of the Sagaing Region of Myanmar (Burma) to the east. Its capital city 
+            is Kohima and its largest city is the twin Chümoukedima–Dimapur. The state 
+            has an area of 16,579 square kilometres (6,401 sq mi) with a population of
+            1,980,602 as per the 2011 Census of India, making it one of the smallest
+            states of India.
+          </p>
+          <br />
+          <p>
+            meghalaya consists of 16 Administrative Districts, inhabited by 17 major 
+            tribes along with other sub-tribes. Each tribe is distinct in character
+            from the other in terms of customs, language and dress. It is a land of
+            folklore passed down the generations through word of mouth. The earliest
+            recorded history of the tribes of present-day meghalaya dates back to the 
+            13th century.
+          </p>
+          <br />
+          <p>
+            In the 19th century, the British India forces began expanding their influence
+            in Northeast India, including the Naga Hills. After India's independence in 1947,
+            the question of the Naga Hills' political status emerged. meghalaya was a district
+            in the State of Assam until 1957, known to others as “The Naga Hills”. 
+            The Naga National Council, led by Zapu Phizo, demanded an independent Naga state
+            and launched an armed insurgency.
+          </p>
+          <br />
+          <p>
+           The Indian Government, however, maintained that meghalaya was an integral part of 
+           the Indian Union. The conflict between the Naga National Council and the Indian 
+           Government resulted in a protracted insurgency. The State of meghalaya was formally
+           inaugurated on 1 December 1963, as the 16th State of the Indian Union, and a 
+           democratically elected government took office in 1964.
+          </p>
+          
+        </div>
+
+        <div class="tab-contents" id="best-time-to-visit" style="background-color: #dcbfff">
+          <h2>Best Time to Visit in <span>meghalaya</span></h2>
+          <br />
+          <h3>Summer in meghalaya</h3>
+          <p>
+            Summer is considered to be the ideal time to explore this elegant
+            state; meghalaya. During this season, the nature is at its best. This
+            season is great for trekking too. You get a chance to see blooming
+            field of orchids and rhododendrons at the foot of the mountains and
+            also by the side of winding ways going up to the hills. Almost all the
+            visiting places; the lakes, the monasteries and the treks are in their
+            inviting mood.
+          </p>
+          <br />
+          <h3>Monsoon in meghalaya</h3>
+          <p>
+            During monsoon, the state experience heavy rainfall throughout the
+            months. While July be the wettest of all. Travelling by roads become
+            obstructable and dangerous. The season is not much of an ideal time to
+            visit the place but becomes best for bird watching and to visit
+            waterfalls. An analysis of rainfall in Naghaland shows that the annual
+            rainfall is minimum at North-meghalaya and maximum at South-naghaland. There
+            is a low rainfall region i.e Namchi. Rainfall in this area is about
+            half of that in the other areas. So if plans pops up, one can surely
+            visit North-meghalaya and avail the heavy discounts offered by the hotels
+            to attract tourism.
+          </p>
+          <br />
+          <h3>Winter in meghalaya</h3>
+          <p>
+            winter in meghalaya is extremely cold with never ending snowfalls. Winter
+            temperature in the region averages between 4 °C (39 °F) and 7 °C (45
+            °F). But it looks mesmerising with snowcapped mountains, rivers and
+            roads. Though travelling might hinder if there is natural disaster,
+            landslides, storm etc, especially in the northern region. Otherwise
+            the place is quite welcoming and beautiful during these months.
+          </p>
+        </div>
+        <div class="tab-contents" id="how-to-reach" style="background-color: #f1f5a8">
+          <h2>How to Reach <span>meghalaya</span></h2>
+          <br />
+          <p>
+            One of northeastern gems, meghalaya is a beautiful state oozing charm,
+            colour, culture, lifestyle with its unmatched destinations and
+            attractions. This must visit place in India can easily be accessed via
+            air and roadways, however, roads are considered more appropriate to
+            witness the rich emerald hills and more spectacular nature’s beauty .
+            Below are the major means of transport to reach meghalaya.
+          </p>
+          <br />
+          <h3>By Air:</h3>
+          <p>
+            The closest airport to meghalaya is Bagdogra Airport located in West
+            Bengal and it is about 124 Kms away from Gangtok. From here, shared or
+            private taxis are easily available to reach meghalaya. In addition,
+            meghalaya Helicopter Services are also available for on and off services
+            from Gangtok to Bagdogra Airport.
+          </p>
+          <br />
+          <h3>By Road:</h3>
+          <p>
+            The roads to meghalaya is picturesque and soothing. As you ascend, you
+            will encounter zigzag roads with Teesta River on one side and picture
+            perfect mountains on the other side. meghalaya has a good state bus
+            service along with private bus service. One can also hire taxis for
+            local commutation and and can even find shared cabs as well. meghalaya’s
+            capital, Gangtok is well connected with Bagdogra, New Jalpaiguri as
+            well as Guwahati by road.
+          </p>
+          <br />
+          <h3>By Rail:</h3>
+          <p>
+            The nearest railway station to meghalaya is New Jalpaiguri and Siliguri
+            Railway Station. These stations are located about 125 kilometre and
+            114 kilometre respectively from Gangtok.
+          </p>
+        </div>
+        <div class="tab-contents" id="places-to-visit" style="background-color: #f7ded0">
+          <h2>Places to visit in <span>meghalaya</span></h2>
+          <br/>
+          <h3>East meghalaya:-Breathtaking views</h3>
+          <p>
+            District headquarters: Gangtok
+            <br />
+            Starting with East meghalaya, as most tourists to meghalaya do, one is sure
+            to be mesmerized by this land. Its lush forests, icy lakes, and
+            monasteries make it a wonderful place to visit. Gangtok, the state’s
+            capital, also serves as the district headquarters of East meghalaya.
+            <br />
+            The capital city of Gangtok lies in the East meghalaya district of the
+            state. It is the most popular destination of meghalaya and attracts a
+            number of tourists every year. Elevated at a height of 5,500 ft.
+            Gangtok is a popular hill station and is a preferred destination for
+            couples on their honeymoon.
+            <br />
+            Nestled in the lap of the mighty Himalayas, the city makes for an
+            ideal trekking spot with its terrains and weather that remains cool
+            throughout the year. Gangtok loves its quiet and serene monasteries as
+            much as its vibrant nightlife. It has something for everyone.
+            <br />
+            Tsomgo Lake is another destination that should be on your East meghalaya
+            itinerary. It is a glacial lake and is situated at a height of 12,313
+            ft. The lake is a beautiful sight to behold as it sits amidst the snow
+            clad mountains which are reflected back in the lake’s water. Depending
+            on the seasons, the lake changes colors from blue to a dark green.
+            Tsomgo Lake remains frozen throughout the winter in complete contrast
+            with the spring when the valley is covered in colorful rhododendron
+            flowers.
+            <br />
+            One of the highest motorable passes of India, Nathu La is situated at
+            a height of 14,450 ft. among the snow clad mountains of meghalaya.
+            Earlier a part of the ancient silk road, the pass now functions as an
+            open trading border post between India and China and is a major
+            participant in the Sino-Indian trade. En route to the pass, you can
+            also view some beautiful waterfalls and mighty mountains of meghalaya all
+            around.
+            <br />
+            East meghalaya also has the Baba Mandir, a shrine-cum-memorial built in
+            honor of Harbhajan Singh, a soldier of the Indian Army who went
+            missing one day during his patrol. According to a legend, he appeared
+            in a dream to his colleagues and informed them about his death and
+            that he wished for a Samadhi. The Old Baba Mandir is built at the site
+            where he was posted during his service. Since it is difficult to climb
+            the site, a New Baba Mandir has been constructed as the samadhi for
+            tourists to visit at Kupup.
+            <br />
+            If you are looking for an offbeat destination in East meghalaya, then
+            Zuluk is the place for you. Roughly at a distance of 100 kilometers
+            from the city of Gangtok is the small village of Zuluk, sitting at a
+            height of 10,000 ft. Zuluk used to be part of the ancient silk route
+            connecting to Tibet but is now an emerging point of interest among
+            tourists who tend to visit the place to get a perfect view of the
+            mighty Khangchendzonga.
+          </p>
+          <br />
+          <h3>West meghalaya: The embodiment of meghalaya’s beauty!</h3>
+          <p>
+            District headquarters: Gyalshing
+            <br />
+            The small hill town of Pelling is a popular tourist attraction of
+            meghalaya after Gangtok. Situated at a height of 6,800 ft. the town is at
+            a distance of 10 kilometers from the district headquarters of
+            Gyalshing. The landscape of Pelling is dotted with monasteries, lakes
+            and waterfalls along with mesmerizing views of Mount Khangchendzonga.
+            <br />
+            The Pemayangtse Monastery and the Sanga Choeling Monastery are popular
+            among tourists in West meghalaya. The Sanga Choeling Monastery was built
+            in the 17th century and is an important site for the devotees of
+            Buddhism.
+            <br />
+            Close to the monastery is the Chenrezig Statue with India’s first ever
+            Skywalk. With a height of 100 ft. and the transparent bridge, you will
+            feel you are actually walking in the sky. Other places to explore in
+            Pelling are the holy lake of Khecheopalri, Khangchendzonga Falls, and
+            the Singshore Bridge, Asia’s second highest suspension bridge.
+            <br />
+            The villages of Kaluk & Rinchenpong became popular tourist attractions
+            of West meghalaya recently, both drawing visitors for their dreamy
+            beauty. At a height of 5,600 ft. the quiet and picturesque village of
+            Kaluk provides magnificent views of Mount Khangchendzonga.
+            <br />
+            Rinchenpong is just 3 kilometers away from Kaluk and is popular for
+            its monasteries, the Gurung Monastery and the Rinchenpong Monastery
+            which houses a beautiful statue of Lord Buddha.
+            <br />
+            Yuksom is an important town for the people of meghalaya, since this is
+            where the first Chogyal, or the monarch of meghalaya was crowned by
+            Buddhist Lamas. The Dubdi Monastery of Yuksom is the oldest monastery
+            in meghalaya and is a place you must visit. The town of Yuksom serves as
+            the base for Dzongri & Goecha La treks.
+          </p>
+          <br />
+          <h3>North meghalaya: Sightseeing overloaded!</h3>
+          <p>
+            District headquarters: Mangan
+            <br />
+            You could visit Lachung, a scenic village situated by the side of
+            River Lachung, popular for its apples, peaches, and apricots, and the
+            Lachung Monastery. North meghalaya is also popular for its Zero Point,
+            located near Lachung. It is the final destination civilians can travel
+            before reaching the country’s border with China.
+            <br />
+            Yumthang Valley is another tourist spot you must visit when you
+            venture into North meghalaya. The valley is known for its hot springs and
+            the beautiful rhododendron flowers during spring.
+            <br />
+            North meghalaya receives heavy snowfall during December and is a good
+            time to visit if you want to enjoy the snowfall. The temperature often
+            falls below zero and the entire landscape gets covered in snow.
+            Everything turns white!
+            <br />
+            One of the highest lakes in the world, Gurudongmar Lake sits at almost
+            17.800 ft. and is a mesmerizing site during the winters when it
+            decides to freeze completely. The Khangchendzonga National Park, a
+            UNESCO World Heritage Site, is also located in this district of
+            meghalaya.
+            <br />
+            It functions as a national park as well as a biosphere reserve. At the
+            park you may get to see rare Himalayan wildlife species like Himalayan
+            Tahr, Himalayan Blue Sheep, Himalayan Black Bear, Tibetan Wild Ass and
+            the Red Panda.
+          </p>
+          <br />
+          <h3>South meghalaya: Culture, nature and adventure!</h3>
+          <p>
+            District headquarters: Namchi <br />
+
+            A meghalaya tour is incomplete without visiting South meghalaya. Its surreal
+            beauty ensures that it’s included in any meghalaya travel guide. It is
+            home to Namchi, famously known as the cultural & religious hub of
+            meghalaya. Two famous tourist sites are the 108 feet tall statue of Lord
+            Shiva at the Siddheshwar Dham and the 118 feet tall statue of Guru
+            Padmasambhava at Samdruptse Hill. The 17th century Ngadak Monastery is
+            also a destination that you must visit to experience the serenity and
+            peace of South meghalaya.
+            <br />
+            The Temi Tea Garden at Ravangla is a matter of pride for the district
+            and the state. It is meghalaya’s only tea garden and is known for its
+            great quality tea. If you visit the garden during the month of
+            November you can enjoy the beautiful cherry blossom trees that adorn
+            the area.
+            <br />
+            Ornithologists and bird watchers definitely should visit the Maenam
+            Wildlife Sanctuary at Ravangla. This sanctuary of South meghalaya has a
+            number of bird species such as the Dark-throated Thrush, Babblers,
+            Blood Pheasant, and Cuckoos. Not just birds, the sanctuary also has
+            native animals like the Red Panda, Goral, Barking Deer, Civet cat, and
+            the Leopard cat.
+            <br />
+            The terrains of South meghalaya allow for treks that you will surely
+            enjoy. The lush green forests, the cool weather, the view of the
+            beautiful Teesta River along with the mighty Khangchendzonga. What’s
+            not to love here!
+            <br />
+            There’s also Sikip, along the banks of the Rangeet River which offers
+            amazing opportunities for river rafting and angling. And if you just
+            want to relax among the captivating mountains of meghalaya, try out the
+            hot springs at Borong and Ralong. These are natural hot springs and
+            are rich in sulfur content, which means they are healing for your
+            skin. Relax in the hot waters amidst the mighty Himalayas.
+          </p>
+        </div>
+        <div class="tab-contents" id="things-to-do" style="background-color: #e5e1da">
+          <h2>Things to do in <span>meghalaya</span></h2><br>
+          <p>
+            Far away from the intricacies of life, this landlocked state bestowed
+            with snow-capped elevated peaks, pristine rivers and ungrazed lands,
+            offers tourists with multitudinous activities to rejuvenate
+            themselves. Starting with the adventure, few of the top things to do
+            in meghalaya include trekking, for which one can choose some spectacular
+            treks Goecha La, Dzongri Lake, Green Lake and Varsey Rhododendron
+            Sanctuary. Rafters can also get thrilled with a splash of cold water
+            while rowing their boats in the turbulent waters of Teesta and Rangit.
+            The sky touching peaks of meghalaya offers with great opportunity of
+            Paragliding to have a bird’s eye view of the flowery meadows amidst
+            the ungrazed lands of the sloppy hills, crackling waterfalls emerging
+            from the green vegetation and blue rivers surrounded by mighty
+            mountains. One can also go for Jeep Safaris, to feel the thrill of
+            passing through the dense jungles and striking waterfalls of meghalaya
+            into the remote valleys and serene monasteries prestigiously placed on
+            top of the hills and explore the high spirited culture of the state.
+          </p>
+          <br />
+          <p>
+            The wildlife enthusiasts has an attractive option to visit the
+            Himalayan Zoological Park to spot the musk deer, snow leopard and
+            various other endangered Himalayan animals in their natural habitat.
+            The unique experience of the adventurous Yak Rides on the colorfully
+            decorated tamed beast near the Dzongri region and Tsomgo Lake is one
+            of the must do things on your visit to meghalaya. Adding to that is the
+            Cable Car Ride from Deorali Bazaar to Tashiling to enjoy the charming
+            view of the city. The fresh monsoon start, invites the birders to
+            indulge into Birdwatching in the dense forest of Kewzingand get lucky
+            by encountering some of the rare species. The Tea as well as the
+            nature lovers can pay a visit to the very popular Temi Tea Garden to
+            get lost in the aroma of freshly made organic tea. Finally you can end
+            the tour by shopping the authentic handicrafts and traditional dresses
+            of meghalaya and stuff your bags with the sweet memories of your visit to
+            meghalaya.
+          </p>
+        </div>
+        <div class="tab-contents" id="map" style="width: 1000px; height: 400px"></div>
+      </div>
+    </header>
+  </section>
+
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+        if (tabcontent.id === tabname) {
+          tabcontent.classList.add("active-tab");
+        }
+      }
+      event.currentTarget.classList.add("active-link");
+    }
+
+
+    // Creating map options
+    var mapOptions = {
+            center: [27.2134142,88.6797401],
+            zoom:9
+        }
+
+
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        // Creating a marker
+        var marker = L.marker([27.189526350864693, 88.67097718811453]).addTo(map);
+        var marker = L.marker([27.323816618728348, 88.2380555975789]).addTo(map);
+        var marker = L.marker([27.734033384886576, 88.54887400491997]).addTo(map);
+        var marker = L.marker([27.33320277582575, 88.61272129491293]).addTo(map);
+        var marker = L.marker([27.168430421118178, 88.36149383517179]).addTo(map);
+        var marker = L.marker([27.68977963306445, 88.74166805757959]).addTo(map);
+        var marker = L.marker([27.30581600616142, 88.36420654908078]).addTo(map);
+        var marker = L.marker([27.50077589839271, 88.5349337477013]).addTo(map);
+
+      
+  </script>
+</body>
+
+</html>

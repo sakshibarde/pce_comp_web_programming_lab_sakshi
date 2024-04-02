@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sikkim.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Odisha</title>
+    <style>
+        .tab-contents {
+            font-size: 20px;
+            font-family: "Times New Roman", Times, serif;
+            padding: 40px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .logo {
+            width: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+
+        .welcome {
+            margin: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="images/logo.jpg" style="height: 100px; width: 150px" />
+    </div>
+    <section>
+        <header>
+            <div class="header">
+                <div class="container">
+                    <span class="slider" id="slider1"></span>
+                    <span class="slider" id="slider2"></span>
+                    <span class="slider" id="slider3"></span>
+                    <span class="slider" id="slider4"></span>
+                    <span class="slider" id="slider5"></span>
+
+                    <div class="imgContainer">
+                        <div class="slide_div" id="slide_1">
+                            <img src="images/odisha-1.jpeg" class="img" id="img1" />
+                            <a href="#slider1" class="button" id="button1"></a>
+                        </div>
+                        <div class="slide_div" id="slide_2">
+                            <img src="images/odisha-2.jpg" class="img" id="img2" />
+                            <a href="#slider2" class="button" id="button2"></a>
+                        </div>
+                        <div class="slide_div" id="slide_3">
+                            <img src="images/odisha-3.jpg" class="img" id="img3" />
+                            <a href="#slider3" class="button" id="button3"></a>
+                        </div>
+                        <div class="slide_div" id="slide_4">
+                            <img src="images/odisha-4.jpg" class="img" id="img4" />
+                            <a href="#slider4" class="button" id="button4"></a>
+                        </div>
+                        <div class="slide_div" id="slide_5">
+                            <img src="images/odisha-5.jpg" class="img" id="img5" />
+                            <a href="#slider5" class="button" id="button5"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome">
+                <h1>Odisha</h1>
+            </div>
+
+            <div class="options">
+                <nav class="content-titles">
+                    <ul>
+                        <li>
+                            <a class="tab-links active-link" onclick="opentab('overview')">Overview</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('best-time-to-visit')">Best Time to Visit</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('how-to-reach')">How to Reach</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('places-to-visit')">Places to Visit</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('things-to-do')">Things to Do</a>
+                        </li>
+                        <li><a class="tab-links" onclick="opentab('map')">Map</a></li>
+                    </ul>
+                </nav>
+                <div class="tab-contents active-tab" id="overview" style="background-color: #d0f6cf">
+                    <h2>About <span>Odisha</span></h2>
+                    <br />
+                    <p>
+                        A true extraordinaire, Odisha is the quiet and serene part of
+                        India. Fringed by the Bay of Bengal, and flaunting a long
+                        coastline, this east Indian gem has some of the most stunning
+                        beaches that are often less-frequented. Home to a plethora of
+                        Hindu and Buddhist pilgrimage sites, Odisha is a place that will
+                        take you back to the glorious time of Ashoka the Great. Explore
+                        the majestic Jagannath Temple at Puri and learn about its many
+                        mysteries, view the medieval architecture of Odisha’s temple and
+                        Buddhist monasteries, attend the annual Sand Art Festival, go
+                        boating in the Chilika Lake, or walk on the sea at Chandipur
+                        Beach. There's so much to do in Odisha.
+                    </p>
+                    <br />
+                    <p>
+                        Odisha is blessed with a varied landscape and consists of hills,
+                        rivers, beaches and sea, making it a popular point of interest for
+                        the tourists. Its forests make the perfect home for a number of
+                        wildlife such as Tigers, Elephants, Black Panthers, Macaque, Bear,
+                        Gharial, Chital and the Sambar Deer. The architecture of Odisha is
+                        another reason to fall in love with the state with several
+                        historic structures adorned with intricate carvings like the famed
+                        Sun Temple of Konark, which became the inspiration for the Stone
+                        Chariot at Hampi. Not just rich in history, Odisha is also rich
+                        with minerals. An important hub for India, the state has reserves
+                        of Iron ore, Bauxite, Chromite, Manganese ore, Coal, Limestone,
+                        Graphite, Gold, Gemstone, Diamond, among others. It is indeed true
+                        that words cannot express the beauty of Odisha. Home to one of the
+                        four sacred Hindu pilgrimages, the state will satiate the
+                        curiosity of a traveler who is curious to learn about the elements
+                        that paint its canvas.
+                    </p>
+                </div>
+
+                <div class="tab-contents" id="best-time-to-visit" style="background-color: #dcbfff">
+                    <h2>Best Time to Visit in <span>Odisha</span></h2>
+                    <br />
+                    <h3>Summer in Odisha</h3>
+                    <p>
+                        Summer season in Odisha starts from April and lasts till June.
+                        During this, Odisha remains hot and humid with temperature
+                        lingering between 24°C - 35°C. However, if you are up to plan your
+                        trip during the summer season to experience the scorching heat of
+                        Odisha for a unique experience then you can go ahead as the
+                        evenings are quite pleasant and one can think of planning a visit
+                        in summer season in Odisha. In fact, summer is a good time to
+                        enjoy and celebrate festivals like Chandan Yatra, Maha Vishuva
+                        Sankranti, Raja Praba and Rath Yatra
+                    </p>
+                    <br />
+                    <h3>Monsoon in Odisha</h3>
+                    <p>
+                        Monsoon season in Odisha begins from the month of July and lasts
+                        till September. People of Odisha wait for the arrival of the
+                        monsoon as the state expect heavy rains lasting till September
+                        which enhances the beauty of Odisha, making it more green and
+                        alluring. If you are up to experience the incessant rain of Odisha
+                        then go ahead planning a trip by seeking travel advice that would
+                        help you cover everything from the scratch.
+                    </p>
+                    <br />
+                    <h3>Winter in Odisha</h3>
+                    <p>
+                        Winters between October and February is the most suitable to get
+                        around Odisha and explore the beautiful state. The weather is
+                        cool, pleasant and perfect with 10°C. Visiting Odisha during the
+                        winter season you would witness the lush greenery all around and
+                        will have the opportunity to reminisce the scintillating views.
+                        The pleasant weather of the season would allow you to make the
+                        most out of your trip to Odisha where you can roam around the
+                        temples easily. If you are a nature lover, then Odisha will
+                        provide you with a lifetime experience where you can witness the
+                        migratory birds.
+                    </p>
+                </div>
+                <div class="tab-contents" id="how-to-reach" style="background-color: #f1f5a8">
+                    <h2>How to Reach <span>Odisha</span></h2>
+                    <br />
+                    <p>
+                        Odisha is that destination of India which gives you those memories
+                        which are hard to forget. This Indian state is well connected by
+                        air, rail and road to various other major cities of India, so
+                        reaching there would be hustle free. No matter in which state or
+                        for that matter, in which country you are in the world, reaching
+                        Odisha will never be difficult. To have a memorable experience one
+                        should choose the best alternative of travelling to Odisha and
+                        explore India in every manner be it from air or road or even while
+                        travelling through rail.
+                    </p>
+                    <br />
+                    <h3>By Air:</h3>
+                    <p>
+                        Odisha has that one airport which is well connected to various
+                        nations of the world. Biju Patnaik International Airport is
+                        located in the capital city of Odisha and a world-based
+                        connectivity. Other than this, the Indian state has domestic as
+                        well as private airports. The state also has a domestic airport
+                        which is used for commercial purpose also, popularly known as
+                        Jharsuguda Airport. Airways is actually the best alternative to
+                        reach anywhere and reaching Odisha on time gives you rather more
+                        time to explore the gorgeous state.
+                    </p>
+                    <br />
+                    <h3>By Road:</h3>
+                    <p>
+                        Reaching Odisha by road is quite a challenge yet an interesting
+                        one. The one who loves long drives surely will enjoy the national
+                        highways, long drives and beautiful roads. Also reaching Odisha is
+                        quite easy as the state has well road connectivity and access to
+                        various nearby cities. But for those who do not drive or don’t
+                        want to drive, the next best alternative is to board the buses
+                        which ply from various cities of India. These buses could be
+                        private or run by the government for establishing and maintaining
+                        a good connectivity with various states.
+                    </p>
+                    <br />
+                    <h3>By Rail:</h3>
+                    <p>
+                        Travelling by trains gives one the advantage of witnessing the
+                        actual rustic India and enjoy the beauty. Odisha homes the
+                        highest-revenue earning railway station- Bhubaneswar Railway
+                        Station which is connected to various other Indian states. Also
+                        the major trains which ply on this route are Konark Express,
+                        Rajdhani and Coromandel Express make it rather very convenient for
+                        the travellers as the railway station is based in the capital city
+                        of Odisha..
+                    </p>
+                </div>
+                <div class="tab-contents" id="places-to-visit" style="background-color: #f7ded0">
+                    <h2>Places to visit in <span>Odisha</span></h2>
+                    <br />
+                    <h3>Odisha- The Land of Unique Temples</h3>
+                    <p>
+                        <b>Jagannath Temple</b>: The Jagannath Temple at Puri, Odisha is
+                        among the most revered Hindu temples in India and is dedicated to
+                        Lord Jagannath, an incarnation of Lord Vishnu. Being among the 4
+                        Char Dham temples, Jagannath Temple attracts hordes of people
+                        every year who come to visit this religious site. Built in the
+                        10th century, the holy temple is equally puzzling as it is lovely
+                        and is known for its unexplained mysteries. <br />
+                        <b>Panchalingeswar Temple </b>: Named after the 5 Shivalingas
+                        within the temple, the Panchalingeswar Temple is located near the
+                        Nilagiri Hill and is dedicated to Lord Shiva which makes it a
+                        popular pilgrimage site for the Shaivites. The temple has a
+                        perennial stream through which the shiva lingas are forever
+                        bathed. According to legends, the shiva lingas were installed here
+                        by Goddess Sita, the wife of Lord Rama during their exile whereas
+                        another story tells that they were put here by the demon king
+                        Banasure to appease Lord Shiva. <br />
+                        <b>Ghanteswari Temple </b>: The beautiful Ghanteswari Temple is
+                        dedicated to the Goddess Ghanteswari and is adorned with bells all
+                        over, which the devotees have offered to the Goddess as a prayer.
+                        A must visit place in Odisha, the temple is based along the River
+                        Mahanadi, and its bells made it work as a lighthouse in the past.
+                        Since the river near the temple could get rough and cause boats to
+                        drown, the bells in the temple alerted the boats beforehand during
+                        strong winds caused by the sound of the bells.
+                    </p>
+                    <br />
+                    <h3>Odisha- Bountiful Buddhist Sites</h3>
+                    <p>
+                        <b>Kuruma </b>:Kuruma is a Buddhist site as well as an
+                        archaeological site in Odisha and is among the most popular
+                        tourist places of the state. The excavations found an image of
+                        Lord Buddha seated in a Bhumisparsha mudra, which is a unique one
+                        in the state. The site also contains Heruka, who is a Buddhist
+                        deity and has long brick walls made with ancient bricks. The
+                        excavation of the site has brought forth rooms and halls which
+                        were probably made for teaching and purposes of praying. Apart
+                        from these, a number of coins, manuscripts, and seals have also
+                        been discovered from the site at Kuruma. <br />
+                        <b> Langudi</b> : After the forest of the Langudi Hill was
+                        deforested in the 1950s, a number of Buddhist Stupas and sites
+                        were discovered making it today one of the top places to visit in
+                        Odisha. Out of the 34 stupas that were found, the big 5 among them
+                        were referred to as the 'Panch Pandava' by the locals but the
+                        Mahastupa remained underneath a mound which was discovered later.
+                        Near the mahastupa you will find the 34 stupas, carved into the
+                        rock surrounded by elaborate carvings. There are also carvings of
+                        Buddha in dhyana mudras, the goddess Tara, Avalokiteshvara, and
+                        Prajnaparamita. <br />
+                        <b> Dhauli</b> : Dhauli is a Buddhist site which contains stupas,
+                        chaityas, and pillars that were laid by King Ashoka and is
+                        therefore equally important from a historical point of view. This
+                        destination is popular for its elephant, cut out from a rock which
+                        is believed to be among the earliest rock cut sculptures in
+                        Odisha! Near the elephant stands the Dhauli Stupa or the Peace
+                        Pagoda of Dhauli. The dome-shaped structure has stone panels where
+                        one can spot Lord Buddha's footprints and the Bodhi tree, the tree
+                        under which Lord Buddha attained enlightenment.
+                    </p>
+                    <br />
+                    <h3>Beaches of Odisha- The Sun and the Sand</h3>
+                    <p>
+                        <b>Chandipur Beach </b> The Chandipur Beach is also known for its
+                        'Vanishing Sea' and is a popular attraction for tourists in
+                        Odisha. During the low tides, the sea moves back in to 2 to 5km.
+                        It is truly a mesmerizing site and you should witness it for
+                        yourself. When the sea recedes so much, you can even walk on the
+                        “sea bed” and feel the magic. <br />
+                        <b>Chandrabhaga Beach </b> The gorgeous Chandrabhaga Beach in
+                        Odisha has been recognized as Asia's 1st Blue Flag Beach, which
+                        means it is environmentally friendly and sustainable in its
+                        practices. Known to cure skin diseases, this beach is one of the
+                        most beautiful beaches of Odisha that will surely soothe your
+                        eyes.
+                    </p>
+                    <br />
+                    <h3>Hill Stations of Odisha- From Up Above</h3>
+                    <p>
+                        <b>Daringbadi </b>: Daringbadi is lovingly referred to as the
+                        'Kashmir of Odisha' due to its scenic beauty. Located at a height
+                        of 3,000 ft. this hill station in Odisha is abundant with
+                        bountiful green valleys, pine trees, and coffee plantations.
+                        Sitting at such a height, this is the only place in the state that
+                        receives snowfall during the season of winter, and makes for a
+                        fascinating sight. <br />
+                        <b>Mahendragiri </b>: The 2nd highest peak of Odisha, Mahendragiri
+                        is a range of hills and is elevated at a height of 4.925 ft. Due
+                        to its biodiversity it has been declared as a Biodiversity
+                        Heritage Site by the Odisha Government to preserve the various
+                        species of flora and fauna found among its forests. Mahendragiri
+                        is also a pilgrimage site and houses a number of Hindu temples,
+                        specifically those related to the Pandavas and their mother,
+                        Kunti.
+                    </p>
+                    <br />
+                    <h3>National Parks- A Safe Sanctuary</h3>
+                    <p>
+                        <b>Sunabeda Wildlife Sanctuary </b>: The Sunabeda Wildlife
+                        Sanctuary is named after the deity of Sunabeda, Goddess Sunadei
+                        and is spread over a vast area containing plateaus, canyons, and
+                        waterfalls within it. The sanctuary is home to tigers, leopards,
+                        gaurs, sloth bear, hyena, chital, barking deer and the swamp deer
+                        along with langurs and monkeys. <br />
+                        <b>Satkosia Tiger Reserve </b>: The Satkosia Tiger Reserve is
+                        contained within the Mahanadi Elephant Reserve and has the River
+                        Mahanadi flowing through it. The Reserve is home to tigers,
+                        leopards, hyena, various species of deer, and the endangered
+                        species of gharial and freshwater crocodiles. <br />
+                        <b>Gahirmatha Marine Sanctuary </b>: The only marine sanctuary of
+                        Odisha, the Gahirmatha Marine Sanctuary is known for being the
+                        nesting ground for the Olive Ridley turtles who come here from the
+                        South Pacific Ocean after a long journey. The turtles reach Odisha
+                        usually starting from the month of November and are almost half a
+                        million in number! The Odisha Government monitors the sanctuary
+                        for the conservation of these turtles which has now turned into a
+                        safe space for them.
+                    </p>
+                </div>
+                <div class="tab-contents" id="things-to-do" style="background-color: #e5e1da">
+                    <h2>Things to do in <span>Odisha</span></h2>
+                    <br />
+                    <p>
+                    <ul>
+                        <li>Try jet skiing, parasailing, or speed boating at the Puri Beach</li>
+                        <li>Boat among the mangrove forests in the Bhitarkanika National Park and view the crocodiles at
+                            the Park</li>
+                        <li>Visit the Kalijai Temple, Satapada Dolphin Sanctuary and boat around in Chilika Lake, the
+                            largest saltwater lake in India</li>
+                        <li>Explore the Panch Pandav Caves and the Gupteshwar Caves</li>
+                        <li>Visit the Badaghagara Waterfall, Duduma Waterfall, and the Khandadhar Waterfall</li>
+                        <li>Check out Odisha's traditional handicrafts from the villages of Raghurajpur and Pipili</li>
+                        <li>Check out the regional cuisine and the many sweets of Odisha</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="tab-contents" id="map" style="width: 1000px; height: 400px"></div>
+            </div>
+        </header>
+    </section>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+                if (tabcontent.id === tabname) {
+                    tabcontent.classList.add("active-tab");
+                }
+            }
+            event.currentTarget.classList.add("active-link");
+        }
+
+        // Creating map options
+        var mapOptions = {
+            center: [27.2134142, 88.6797401],
+            zoom: 9,
+        };
+
+        // Creating a map object
+        var map = new L.map("map", mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer(
+            "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        );
+
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        // Creating a marker
+        var marker = L.marker([19.814151167621585, 85.82949525688159]).addTo(map);
+        var marker = L.marker([20.46475930011713, 85.87998434214671]).addTo(map);
+        var marker = L.marker([21.467836944064093, 83.97940522819161]).addTo(map);
+        var marker = L.marker([20.297000858738954, 85.81495552732623]).addTo(map);
+        var marker = L.marker([19.89222570283024, 86.09043353473201]).addTo(map);
+        var marker = L.marker([19.315854632617057, 84.79520956578807]).addTo(map);
+        var marker = L.marker([22.260268954608954, 84.84680700178832]).addTo(map);
+    </script>
+</body>
+
+</html>

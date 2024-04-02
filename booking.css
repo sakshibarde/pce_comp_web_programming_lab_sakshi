@@ -1,0 +1,76 @@
+/* booking.css */
+
+body {
+    font-family: Arial, sans-serif; /* Use a common font for better readability */
+background-image: url("images/book4.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.box {
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgb(35, 35, 35);
+    padding: 30px;
+}
+
+.group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Add media query for better responsiveness */
+@media (max-width: 600px) {
+    .box {
+        width: 90%;
+    }
+}

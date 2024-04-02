@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sikkim.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <title>Lakshadweep</title>
+    <style>
+      .tab-contents {
+        font-size: 20px;
+        font-family: "Times New Roman", Times, serif;
+        padding: 40px;
+        border-radius: 10px;
+        display: none;
+      }
+
+      .logo {
+        width: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 20px;
+      }
+
+      .welcome {
+        margin: 10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="logo">
+      <img src="images/logo.jpg" style="height: 100px; width: 150px" />
+    </div>
+    <section>
+      <header>
+        <div class="header">
+          <div class="container">
+            <span class="slider" id="slider1"></span>
+            <span class="slider" id="slider2"></span>
+            <span class="slider" id="slider3"></span>
+            <span class="slider" id="slider4"></span>
+            <span class="slider" id="slider5"></span>
+
+            <div class="imgContainer">
+              <div class="slide_div" id="slide_1">
+                <img src="images/lakshadweep-1.jpeg" class="img" id="img1" />
+                <a href="#slider1" class="button" id="button1"></a>
+              </div>
+              <div class="slide_div" id="slide_2">
+                <img src="images/lakshadweep-2.jpg" class="img" id="img2" />
+                <a href="#slider2" class="button" id="button2"></a>
+              </div>
+              <div class="slide_div" id="slide_3">
+                <img src="images/lakshadweep-3.jpg" class="img" id="img3" />
+                <a href="#slider3" class="button" id="button3"></a>
+              </div>
+              <div class="slide_div" id="slide_4">
+                <img src="images/lakshadweep-4.jpg" class="img" id="img4" />
+                <a href="#slider4" class="button" id="button4"></a>
+              </div>
+              <div class="slide_div" id="slide_5">
+                <img src="images/lakshadweep-5.jpeg" class="img" id="img5" />
+                <a href="#slider5" class="button" id="button5"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="welcome">
+          <h1>Lakshadweep</h1>
+        </div>
+
+        <div class="options">
+          <nav class="content-titles">
+            <ul>
+              <li>
+                <a class="tab-links active-link" onclick="opentab('overview')"
+                  >Overview</a
+                >
+              </li>
+              <li>
+                <a class="tab-links" onclick="opentab('best-time-to-visit')"
+                  >Best Time to Visit</a
+                >
+              </li>
+              <li>
+                <a class="tab-links" onclick="opentab('how-to-reach')"
+                  >How to Reach</a
+                >
+              </li>
+              <li>
+                <a class="tab-links" onclick="opentab('places-to-visit')"
+                  >Places to Visit</a
+                >
+              </li>
+              <li>
+                <a class="tab-links" onclick="opentab('things-to-do')"
+                  >Things to Do</a
+                >
+              </li>
+              <li><a class="tab-links" onclick="opentab('map')">Map</a></li>
+            </ul>
+          </nav>
+          <div
+            class="tab-contents active-tab"
+            id="overview"
+            style="background-color: #d0f6cf"
+          >
+            <h2>About <span>Lakshadweep</span></h2>
+            <br />
+            <p>
+              A perfect amalgamation of islands, Lakshadweep is situated off the
+              Kerala coast in the Arabian Sea. Dotted with white sandy beaches,
+              lagoons and coral reefs, Lakshadweep is an ideal destination for
+              nature lovers seeking solitude and adventure enthusiasts. Being
+              one of the smallest Union Territory of India, Lakshadweep let the
+              tourists get close to the alluring marine life, the rural
+              communities, the lighthouse and more than that and an enormous
+              magnetism for the travellers of all kind.
+            </p>
+            <br />
+            <p>
+              Islands being the major tourist attractions in Lakshadweep will
+              let one explore the beauty of nature or indulge in some
+              adventurous activities. Out of all, the popular ones include
+              Minicoy Island which has some of the best luxury beach resorts and
+              one of the oldest lighthouses in Lakshadweep which offers
+              breathtaking views from the top, the Bangaram Island which is an
+              ideal tourist spot for the honeymooners, Kadmat Island which is a
+              home to huge lagoons and rich marine life. Other than this,
+              tourists can even head to Suheli, Cherium, Tinnakara, Kalpeni,
+              Agatti, Chetlat and Bitra for a relaxing and fun-filled beach
+              holiday.
+            </p>
+            <br />
+            <p>
+              Coming to the cuisines of Lakshadweep, it is often said the food
+              here is equivalent to the islands. The local delicacies of the
+              destination have a major Kerala influence with coconut and rice
+              being the primary ingredient. Tourists visiting Lakshadweep cannot
+              escape the aroma of scrumptious traditional dishes including
+              octopus fry, appams and tuna cooked with a special tang of coconut
+              flavour.
+            </p>
+            <br />
+            <p>
+              The must visits eateries where tourists can savour the local
+              delicacies include Agatti Island Beaches Resort, Akshaya Mess and
+              Food Court. Coming to shopping in Lakshadweep, tourists can get
+              their hand on some wonderful stuff including traditional
+              handicrafts made from coral shells. Right from the classic oysters
+              to coral shells, from coconut shell objects to wonderful beach
+              handicrafts, shopping in Lakshadweep will give a unique experience
+              to the tourists. One can even buy bracelets, mirrors, armlets,
+              forks, lamps, ashtrays and more that are made from shells. Not
+              only this, but tourists can even buy some amazing aquariums here.
+            </p>
+          </div>
+
+          <div
+            class="tab-contents"
+            id="best-time-to-visit"
+            style="background-color: #dcbfff"
+          >
+            <h2>Best Time to Visit in <span>Lakshadweep</span></h2>
+            <br />
+            <p>
+              A trip to Lakshadweep can be planned during the winter season
+              between October and Mid-May when the weather is pleasant and
+              conducive for water sports activities.
+            </p>
+            <br />
+            <h3>TEMPERATURE</h3>
+            <br />
+            <b>22°C to 33°C </b> <br />Summer <br />March to June <br> <br>
+            <b>27°C to 30°C</b> <br />Monsoon <br />June to September <br> <br>
+            <b>20°C to 30°C</b> <br />Winter <br />October to February
+          </div>
+          <div
+            class="tab-contents"
+            id="how-to-reach"
+            style="background-color: #f1f5a8"
+          >
+            <h2>How to Reach <span>Lakshadweep</span></h2>
+            <br />
+            <p>
+              Lakshadweep Island can be reached by ships and flights operated
+              from Kochi. For all tourist purposes Kochi is the gate way to
+              Lakshadweep. <br />
+
+              Agatti and Bangaram islands can be reached by flight from Kochi.
+              Indian Airlines operate flights from Kochi. Onward flights from
+              Kochi are available to most of the airports in India and abroad.
+              Airstrip is there in Agatti island only. From Agatti boats are
+              available to Kavaratti and Kadmat during fair season October to
+              May. Helicopter transfer is available from Agatti to Kavaratti
+              during monsoon season subjected to availability of helicopter. The
+              flight from Cochin to Agatti takes approximately one hour and
+              thirty minutes. <br />
+
+              Seven passenger ships – MV Kavaratti, MV Arabian Sea, MV
+              Lakshadweep Sea, MV Lagoon, MV Corals, MV Amindivi and MV Minicoy
+              operate between Cochin and Lakshadweep islands. The passage takes
+              14 to 18 hours depending on island chosen for journey. The ships
+              offer different classes of accommodation: A/C First Class with two
+              berth cabins, A/C Secound Class with four berth cabins and push
+              back/Bunk Class with A/C seating. A doctor is available on call on
+              board. MV Amindivi and MV Minicoy also offer comfortable A/C
+              seating ideal for a night’s journey. During fair season, high
+              speed vessels operate between islands.
+            </p>
+          </div>
+          <div
+            class="tab-contents"
+            id="places-to-visit"
+            style="background-color: #f7ded0"
+          >
+            <h2>Places to visit in <span>Lakshadweep</span></h2>
+            <br />
+            <h3>Kavaratti Island</h3>
+            <p>
+              The administrative capital, Kavaratti is the most developed of the
+              islands with the highest percentage of non-islanders as residents.
+              Fifty two mosques are spread out over the island, the most
+              beautiful being the Ujra mosque. A well, within its precincts, is
+              believed to contain water of curative powers. The Ujra mosque has
+              an ornately carved ceiling, said to have been carved from a piece
+              of driftwood. Kavaratti also has an aquarium with several
+              colourful species of fish. There is a glass bottom boat for
+              viewing marine life and an array of remarkable coral formations
+              that pro- vides a background to the lagoons and the islands:
+              within them. Some Water Sports like kayaking canoeing and
+              snorkeling are available for tourists.
+            </p>
+            <br />
+            <h3>Kalpeni Island</h3>
+            <p>
+              Kalpeni has three uninhabited satellite islands, all surrounded by
+              an immense lagoon of spectacular beauty. Sunlight on the water
+              causes it to sparkle and flash like a million aquamarines. Koomel,
+              the gently curving bay where the tourist facilities are located,
+              directly over- looks Pitti and Thilakkm, two of the islands. Here
+              you can swim, reef walk, snorkel or use water sports equipment
+              like kayaks, and sail boats. Now the tourist facilities have been
+              augmented and tourists can stay on the island in privately managed
+              huts, depending on the package. This lagoon is specially rich in
+              coral life.
+            </p>
+            <br />
+            <h3>Kadmath Island</h3>
+            <p>
+              A particularly fine lagoon, of even depth and an endless
+              shoreline, perfect for swimming, makes Kadmath a haven of
+              solitude. The tourist huts are situated some distance away from
+              habitation, with only the splash of the waves to break the
+              silence. During the day, when the heat of the overhead sun becomes
+              too strong, the feathery network of coconut palms provides a
+              canopy throughout the island, through which light dimly filters,
+              green and cool. It is the only island with lagoons on both eastern
+              and western sides. A Water Sports Institute providing water sports
+              facilities has been set up in Kadmath. Accommodation consists of
+              AC and non AC tourist huts aesthetically situated in the coconut
+              palm groves on the beaches. The island is becoming increasingly
+              popular for honeymooners. As a testimony to its Water Sports
+              potential, a Scuba Diving Centre has been set up there. With the
+              Water Sports Institute, Scuba Diving Centre and the proposed
+              augmentation of accommodation, the island is sure to become the
+              focal point of tourist activities in Lakshadweep.
+            </p>
+            <br />
+            <h3>Minicoy Island</h3>
+            <p>
+              Furthest from Kavaratti island, 200 km away to the south and also
+              nearest to the Maldives, Minicoy has a lighthouse built by the
+              British in 1885. Visitors are allowed up, right to the very top.
+              Words cannot do justice to the incredible size of the lagoon, one
+              of the largest in Lakshadweep, the green of coconut trees, and the
+              mirror-like surface of an inland lake as it nestles in one corner
+              of the island. Minicoy has a culture very different from any other
+              island - dress, language, food, all differ. Minicoy has a cluster
+              of 10 villages, which are called Athiris, each presided over by a
+              Moopan. A walk through the winding lanes of the villages is an
+              indication of the culture here. Minicoy is renowned for its dance
+              tradition: the lava dance is performed on festive occasions. There
+              is a tuna canning factory - signifying its importance in tuna
+              fishing and boat building activity. Privately managed cottages
+              have been built on the isolated beaches and are available for
+              tourists.
+            </p>
+            <br />
+            <h3>Agatti Island</h3>
+            <p>
+              Agatti has one of the most beautiful lagoons in Lakshadweep. This
+              is where the airport is built. A virtual gateway to Lakshadweep, a
+              20 bed tourist complex has been set up here. The island will
+              shortly be opened for tourists.
+            </p>
+          </div>
+          <div
+            class="tab-contents"
+            id="things-to-do"
+            style="background-color: #e5e1da"
+          >
+            <h2>Things to do in <span>Lakshadweep</span></h2>
+            <br />
+            <p>
+              With sapphire lagoons, colourful corals, pristine beaches,
+              Lakshadweep has so much to offer to the travellers. The beautiful
+              beach destination promises to let the tourists get a lifetime
+              experience by indulging in some of the best things to do where one
+              can take pleasure in water sports activities and discover the
+              enchanting sea life. Tourists holidaying in Lakshadweep can
+              indulge in water sport activities like scuba diving that will let
+              one comes close to the beautiful marine life, sit and relax on the
+              beach for solitude, witness some of the folk dance events
+              including the Lava Dance, Kolkali Dance and Parichakali Dance,
+              savour on the local delicacies and indulge in shopping the
+              traditional handicrafts made from coral shells. Besides this,
+              there are many other things to do that will give tourists an
+              experience like never before.
+            </p>
+          </div>
+          <div
+            class="tab-contents"
+            id="map"
+            style="width: 1000px; height: 400px"
+          ></div>
+        </div>
+      </header>
+    </section>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+          if (tabcontent.id === tabname) {
+            tabcontent.classList.add("active-tab");
+          }
+        }
+        event.currentTarget.classList.add("active-link");
+      }
+
+      // Creating map options
+      var mapOptions = {
+        center: [10.7551823,72.1346628],
+        zoom: 8,
+      };
+
+      // Creating a map object
+      var map = new L.map("map", mapOptions);
+
+      // Creating a Layer object
+      var layer = new L.TileLayer(
+        "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      );
+
+      // Adding layer to the map
+      map.addLayer(layer);
+
+      // Creating a marker
+      var marker = L.marker([10.559571241616855, 72.63648363932259]).addTo(map);
+      var marker = L.marker([10.077778705778508, 73.6302452655679]).addTo(map);
+      var marker = L.marker([11.225669472381135, 72.77163931251407]).addTo(map);
+      var marker = L.marker([8.288237925469629, 73.05841164610216]).addTo(map);
+      var marker = L.marker([10.85792046181507, 72.19380162518732]).addTo(map);
+      var marker = L.marker([10.942509329932413, 72.28843633454966]).addTo(map);
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sikkim.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Assam</title>
+    <style>
+        .tab-contents {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 40px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .logo {
+            width: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+
+        .welcome {
+            margin: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="images/logo.jpg" style="height: 100px; width: 150px;">
+    </div>
+    <section>
+        <header>
+            <div class="header">
+                <div class="container">
+                    <span class="slider" id="slider1"></span>
+                    <span class="slider" id="slider2"></span>
+                    <span class="slider" id="slider3"></span>
+                    <span class="slider" id="slider4"></span>
+                    <span class="slider" id="slider5"></span>
+
+                    <div class="imgContainer">
+                        <div class="slide_div" id="slide_1">
+                            <img src="images/assam1.jpeg" class="img" id="img1" />
+                            <a href="#slider1" class="button" id="button1"></a>
+                        </div>
+                        <div class="slide_div" id="slide_2">
+                            <img src="images/assam2.jpg" class="img" id="img2" />
+                            <a href="#slider2" class="button" id="button2"></a>
+                        </div>
+                        <div class="slide_div" id="slide_3">
+                            <img src="images/assam3.jpg" class="img" id="img3" />
+                            <a href="#slider3" class="button" id="button3"></a>
+                        </div>
+                        <div class="slide_div" id="slide_4">
+                            <img src="images/assam4.jpeg" class="img" id="img4" />
+                            <a href="#slider4" class="button" id="button4"></a>
+                        </div>
+                        <div class="slide_div" id="slide_5">
+                            <img src="images/assam.5.jpeg" class="img" id="img5" />
+                            <a href="#slider5" class="button" id="button5"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome">
+                <h1>Assam</h1>
+            </div>
+
+            <div class="options">
+                <nav class="content-titles">
+                    <ul>
+                        <li>
+                            <a class="tab-links active-link" onclick="opentab('overview')">Overview</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('best-time-to-visit')">Best Time to Visit</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('how-to-reach')">How to Reach</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('places-to-visit')">Places to Visit</a>
+                        </li>
+                        <li>
+                            <a class="tab-links" onclick="opentab('things-to-do')">Things to Do</a>
+                        </li>
+                        
+                        <li><a class="tab-links" onclick="opentab('map')">Map</a></li>
+                    </ul>
+                </nav>
+                <div class="tab-contents active-tab" id="overview" style="background-color: #d0f6cf">
+                    <h2>About <span>WestBengal</span></h2>
+                    <br />
+                    <p>
+                        Assam (/əˈsæm/, Assamese: অসম, pronounced [ɔxɔm]) is a state in northeastern India, known for
+                        its rich
+                        biodiversity and cultural heritage. It is bordered by Bhutan and Arunachal Pradesh to the north;
+                        Nagaland,
+                        Manipur, Mizoram, and Tripura to the east; Meghalaya, Bangladesh, and West Bengal to the south;
+                        and the
+                        Indian states of Sikkim and Bihar to the west. With a population of over 35 million inhabitants
+                        and an area
+                        of 78,438 km2 (30,285 sq mi) as of 2011, Assam is the most populous and the sixteenth-largest
+                        state in
+                        terms of area in India.
+                    </p>
+                    <br />
+                    <p>
+                        The etymology of the name "Assam" is uncertain. Some suggest it is derived from the Ahom dynasty
+                        which
+                        ruled the region for several centuries. Others propose it may have originated from the Sanskrit
+                        word
+                        "Asoma" meaning "peerless" or "unequaled." Assam has a diverse population comprising various
+                        ethnic
+                        groups including Assamese, Bodo, Bengali, and various indigenous tribes.
+                    </p>
+                    <br />
+                    <p>
+                        Assam boasts a vibrant culinary culture, with rice as a staple food like much of the Indian
+                        subcontinent.
+                        Traditional Assamese cuisine features a variety of dishes made with fish, meat, and vegetables.
+                        Some
+                        popular dishes include Masor Tenga (sour fish curry), Duck Roast, Omita Khar (raw papaya curry),
+                        and
+                        Aloo Pitika (mashed potato with mustard oil and spices). Assam is also known for its rich tea
+                        gardens,
+                        producing some of the finest tea in the world.
+                    </p>
+                    <br />
+                    <p>
+                        Festivals play a significant role in Assamese culture. Bihu, celebrated three times a year
+                        (Rongali Bihu,
+                        Bhogali Bihu, and Kongali Bihu), is the most important festival, marking the Assamese New Year
+                        and the
+                        agricultural cycle. Other festivals include Durga Puja, Diwali, and Magh Bihu. Traditional
+                        Assamese
+                        attire includes the Mekhela Chador for women and the Gamosa for both men and women, which hold
+                        cultural
+                        significance and are often worn during festivals and ceremonies.
+                    </p>
+
+                </div>
+
+                <div class="tab-contents" id="best-time-to-visit" style="background-color: #dcbfff">
+                    <h2>Best Time to Visit in <span>Assam</span></h2>
+                    <br />
+                    <h3>Summer in Assam</h3>
+                    <p>
+                        Travelling in Assam during the summer offers a diverse range of experiences. While the
+                        Brahmaputra Valley
+                        experiences hot and humid weather, the hill stations such as Haflong and Dima Hasao offer cooler
+                        temperatures, making them perfect retreats from the heat. Exploring the lush tea gardens,
+                        wildlife
+                        sanctuaries like Kaziranga, and cultural landmarks such as Kamakhya Temple can be enjoyable
+                        during this
+                        time, despite the warm weather.
+                    </p>
+                    <br />
+                    <h3>Monsoon in Assam</h3>
+                    <p>
+                        Travelling in Assam during the monsoon season brings out the state's natural beauty in its full
+                        glory.
+                        The rainfall transforms the landscape into a verdant paradise, rejuvenating the tea gardens,
+                        forests, and
+                        wildlife sanctuaries. However, heavy rains may lead to occasional floods and disruptions in
+                        transportation
+                        and outdoor activities. Despite these challenges, witnessing the lush greenery, flowing rivers,
+                        and
+                        cascading waterfalls during the monsoon can be a truly immersive experience for visitors.
+                    </p>
+                    <br />
+                    <h3>Winter in Assam</h3>
+                    <p>
+                        Travelling in Assam during winter offers pleasant weather and a chance to explore the state's
+                        cultural
+                        heritage and natural wonders. With temperatures ranging from cool to mild, it's an ideal time
+                        for outdoor
+                        activities like wildlife safaris in Kaziranga National Park and exploring historical sites such
+                        as Sivasagar
+                        and Majuli Island. The winter season also hosts festivals like Bihu, showcasing Assamese culture
+                        and
+                        traditions. Overall, winter in Assam promises a delightful blend of cultural exploration and
+                        natural
+                        beauty.
+                    </p>
+                </div>
+                <div class="tab-contents" id="how-to-reach" style="background-color: #f1f5a8">
+                    <h2>How to Reach <span>Assam</span></h2>
+                    <br />
+                    <p>
+                        With its breathtaking landscapes and vibrant culture, Assam offers a warm welcome to visitors
+                        from all
+                        corners of the globe. Here are the main transportation options to reach this enchanting state:
+                    </p>
+                    <br />
+                    <h3>By Air:</h3>
+                    <p>
+                        Lokpriya Gopinath Bordoloi International Airport in Guwahati, Dibrugarh Airport, and Silchar
+                        Airport serve
+                        Assam, offering domestic and limited international flights. From the airports, taxis, and buses
+                        are readily
+                        available for onward travel to various destinations within the state.
+                    </p>
+                    <br />
+                    <h3>By Road:</h3>
+                    <p>
+                        Assam boasts a well-connected road network, with state and national highways linking major
+                        cities and towns.
+                        Inter-city buses, taxis, and rental cars provide convenient transportation options for
+                        travelers. The state
+                        is also well-connected to neighboring states such as Meghalaya, Arunachal Pradesh, and Nagaland.
+                    </p>
+                    <br />
+                    <h3>By Rail:</h3>
+                    <p>
+                        Assam's extensive railway network ensures easy access to the state. Guwahati Railway Station,
+                        the largest
+                        railway station in Assam, serves as a major transportation hub. Other important railway stations
+                        include
+                        Dibrugarh, Silchar, and Jorhat. Regular train services connect Assam to various parts of the
+                        country,
+                        facilitating smooth travel for visitors.
+                    </p>
+                </div>
+                <div class="tab-contents" id="places-to-visit" style="background-color: #f7ded0">
+                    <h2>Places to visit in <span>Assam</span></h2>
+                    <br />
+                    <h3>Guwahati: Gateway to the Northeast!</h3>
+                    <p>
+                        **District headquarters:** Kamrup Metropolitan <br />
+                        Begin your journey in Guwahati, the bustling gateway to Northeast India. Explore the Kamakhya
+                        Temple,
+                        a revered Hindu pilgrimage site dedicated to Goddess Kamakhya, situated atop Nilachal Hill. Take
+                        a
+                        serene boat ride on the Brahmaputra River during sunset and witness the breathtaking views of
+                        the
+                        cityscape and surrounding hills. Visit the Assam State Museum to delve into the rich cultural
+                        heritage
+                        of Assam, showcasing archaeological artifacts, sculptures, and tribal crafts. Indulge in the
+                        vibrant
+                        markets of Fancy Bazar and Paltan Bazar, offering a variety of local handicrafts, silk sarees,
+                        and
+                        Assamese tea. Guwahati also serves as a convenient base for exploring nearby attractions such as
+                        Kaziranga National Park and Pobitora Wildlife Sanctuary.
+                    </p>
+                    <br />
+                    <h3>Kaziranga National Park: A Wildlife Wonderland!</h3>
+                    <p>
+                        **District headquarters:** Golaghat <br />
+                        Embark on a thrilling safari adventure in Kaziranga National Park, a UNESCO World Heritage Site
+                        and
+                        home to the one-horned rhinoceros. Explore the vast grasslands, marshes, and dense forests
+                        teeming
+                        with diverse wildlife including tigers, elephants, and wild water buffalo. Experience the unique
+                        ecosystem of the park through jeep safaris, elephant rides, and birdwatching tours. Immerse
+                        yourself
+                        in the natural beauty of Kaziranga and witness the conservation efforts aimed at preserving this
+                        biodiversity hotspot.
+                    </p>
+                    <br />
+                    <h3>Majuli Island: A Cultural Oasis!</h3>
+                    <p>
+                        **District headquarters:** Jorhat <br />
+                        Discover the cultural heritage of Majuli Island, the world's largest river island located amidst
+                        the
+                        Brahmaputra River. Explore the ancient Vaishnavite monasteries known as "Satras," which serve as
+                        centers for Assamese culture, music, and dance. Witness traditional performances like Sattriya
+                        dance
+                        and Borgeet, a form of devotional music, showcasing the rich cultural traditions of Assam.
+                        Engage in
+                        pottery making, mask crafting, and weaving workshops, and interact with the local Mishing and
+                        Deori
+                        communities to learn about their way of life. Majuli offers a serene retreat amidst scenic
+                        landscapes
+                        and tranquil villages, making it a haven for cultural enthusiasts and nature lovers alike.
+                    </p>
+                    <br />
+                    <h3>Sibsagar: Legacy of the Ahom Dynasty!</h3>
+                    <p>
+                        **District headquarters:** Sivasagar <br />
+                        Explore the historical landmarks of Sibsagar, the ancient capital of the Ahom Kingdom and a
+                        treasure
+                        trove of Assamese heritage. Visit the majestic Sivasagar Sivadol, a towering temple dedicated to
+                        Lord
+                        Shiva, adorned with intricate carvings and architectural grandeur. Explore the Rang Ghar, a
+                        centuries-old amphitheater used for royal ceremonies and cultural performances during the Ahom
+                        rule.
+                        Discover the ancient Ahom palaces, reservoirs, and temples scattered across the town, reflecting
+                        the
+                        architectural prowess and cultural legacy of the Ahom dynasty. Sibsagar offers a glimpse into
+                        Assam's
+                        royal past and architectural marvels, making it a must-visit destination for history
+                        enthusiasts.
+                    </p>
+                    <div class="tab-contents" id="things-to-do" style="background-color: #e5e1da">
+                        <h2>Things to do in <span>West Bengal</span></h2><br>
+                        <p>
+                            From the bustling streets of Kolkata to the tranquil hills of Darjeeling, West Bengal offers a
+                            myriad of activities to enchant travelers. Adventure seekers can embark on thrilling treks
+                            amidst the lush greenery of the Darjeeling hills or explore the rugged terrain of the Sundarbans
+                            on a thrilling jungle safari. Rafting enthusiasts can conquer the rapids of the Teesta River,
+                            while paragliding enthusiasts can soar high above the scenic landscapes of Kalimpong. Jeep
+                            safaris through the dense forests of Dooars provide an opportunity to spot rare wildlife species
+                            like the Bengal tiger and Indian rhinoceros in their natural habitat.
+                        </p>
+                        <br />
+                        <p>
+                            Wildlife enthusiasts can visit the famous Sunderbans National Park, home to the majestic Royal
+                            Bengal Tiger and a diverse array of flora and fauna. Experience the unique thrill of riding a
+                            yak through the picturesque valleys of Darjeeling or take a cable car ride to witness panoramic
+                            views of the city skyline. Birdwatchers can explore the mangrove forests of the Sundarbans or
+                            the lush tea gardens of Dooars to spot a variety of avian species including the elusive red
+                            panda and colorful peacocks. Don't miss the chance to savor the aromatic flavors of Darjeeling
+                            tea at one of the region's iconic tea estates or indulge in a shopping spree at Kolkata's
+                            vibrant markets, where you can find exquisite handicrafts, traditional sarees, and delectable
+                            street food delights.
+                        </p>
+                    </div>
+                    <div class="tab-contents" id="map" style="width: 1000px; height: 400px"></div>
+                </div>
+        </header>
+    </section>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+                if (tabcontent.id === tabname) {
+                    tabcontent.classList.add("active-tab");
+                }
+            }
+            event.currentTarget.classList.add("active-link");
+        }
+
+
+        // Creating map options
+        var mapOptions = {
+            center: [27.2134142, 88.6797401],
+            zoom: 9
+        }
+
+
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        // Creating a marker
+        var marker = L.marker([27.189526350864693, 88.67097718811453]).addTo(map);
+        var marker = L.marker([27.323816618728348, 88.2380555975789]).addTo(map);
+        var marker = L.marker([27.734033384886576, 88.54887400491997]).addTo(map);
+        var marker = L.marker([27.33320277582575, 88.61272129491293]).addTo(map);
+        var marker = L.marker([27.168430421118178, 88.36149383517179]).addTo(map);
+        var marker = L.marker([27.68977963306445, 88.74166805757959]).addTo(map);
+        var marker = L.marker([27.30581600616142, 88.36420654908078]).addTo(map);
+        var marker = L.marker([27.50077589839271, 88.5349337477013]).addTo(map);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ body{
+    background-color: #0d927e;
+ }
+ .background{
+    background-color: #0e4647;
+    background-image: url("images/nature.jpg");
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    min-height: 200vh;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(2px);
+    background-position: top center;
+ }
+.text{
+    font-style:Franklin Gothic;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    top: 75px;
+    bottom:25px ;
+    
+}
+.textform h1{
+    font-style:sans-serif ;
+    font-size: 12px;
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.card{
+    width: 350px;
+    background-color: rgb(234, 237, 237);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 40px;
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.card-content{
+    padding: 16px;
+}
+.card-content h2{
+font-size: 28px;
+margin-bottom: 8px;
+}
+.card-content p{
+    color: #666;
+    font-size: 16px;
+    line-height: 1;
+}
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 2px;
+    margin-top: 16px;
+    background-color: #333;
+    color: #fff;
+}
+.form h1{
+    text-shadow: #000000;
+    color: #fff;
+    font-size: 40px;
+    padding-left: 40px;
+    
+}
+.form  pre{
+    font-family: Times;
+    color: #f5f5f5;
+    font-size: 1.75em;
+    padding-left: 42px;
+}
+.query{
+    padding-top: 40px;
+    padding-left:30%;
+    position: absolute;
+}
+.query input,.query textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.btn{
+    margin: 10px auto 0;
+    display: inline-block;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    color: #747171;
+    font-family:Times;
+}
+
+
+
+.login-btn{
+    margin: 10px auto 0;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+}
+.login-btn a{
+    text-decoration:none;
+    color: #000000;
+    display: inline-block;
+    font-size: 25px;
+    border: 4px solid#fff;
+    padding: 14px  70px; 
+    border-radius: 120px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+.login-btn a span{
+width: 0%;
+height: 100%;
+position: absolute;
+border-radius: 120px;
+padding: 0px  0px;
+top: 0%;
+left: 0%;
+background: #05d7d0;
+z-index: -1;    
+transition: 0.4s;
+} 
+
+.login-btn a:hover span{
+width: 100%;
+
+}
+.text2 h2{
+    font-style:Rubik;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+}
+
+.button2{
+margin: 10px auto 0;    
+}
+.button2 a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    border: 2px solid#fff;
+    padding: 14px  70px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    left: 40%;
+    right: 60%;
+}
+.button2 :hover{
+    color: #ffffff;
+    background: #000000;
+}

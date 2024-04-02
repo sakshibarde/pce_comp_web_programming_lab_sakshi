@@ -1,0 +1,48 @@
+body {
+    /* background: url('/kerela2.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 2;
+}
+
+.box{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-gap: 5rem;
+    
+}
+.container{
+    height: 350px;
+    width: 350px;
+    margin: 4px;
+    border: 2px solid rgb(171, 168, 168);
+    background-color: rgb(222, 221, 221);
+    ;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgb(35, 35, 35);
+    text-align: center;
+    font-size: 1.5rem;
+}
+.container img{
+    height: 165px;
+    width:350px ;
+    /* object-fit: contain; */
+
+}
+ span{
+    align-items: center;
+}
+.box :hover{
+    cursor: pointer;
+    background-color: grey;
+}
+h1{
+    font-size: 65px;
+    color:black;
+    text-shadow: 5px 5px 5px rgba(20, 19, 19, 0.5);
+    text-align: center;
+
+}
+

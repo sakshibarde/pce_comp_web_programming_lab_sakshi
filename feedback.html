@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact us</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="contact-box">
+            <div class="left"></div>
+            <div class="right">
+                <h2>Contact Us</h2>
+                <form id="contactForm" action="feedback1.php" method="post" onsubmit="return submitForm()">
+                   
+                    <input type="text" id="name" name="name" class="field" placeholder="Your Name" required>
+                    
+                    
+                    <input type="email" id="email" name="email" class="field" placeholder="Your Email" required>
+                    
+                    
+                    <input type="tel" id="phone" name="phone" class="field" placeholder="Phone" pattern="[0-9]{10}">
+                    
+                    
+                    <textarea id="message" name="message" class="field" placeholder="Message" required></textarea>
+
+                    <input type="submit" value="Send" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            var name = document.getElementById('Your name').value.trim();
+            var email = document.getElementById('Your email').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+            var message = document.getElementById('message').value.trim();
+
+            // Client-side validation
+            if (!validateForm(name, email, phone, message)) {
+                return false; // Prevent form submission
+            }
+
+            // Server-side validation
+            // This is only for demonstration. Replace with actual server-side validation in 'connect.php'
+
+            return true; // Allow form submission
+        }
+
+        function validateForm(name, email, phone, message) {
+            // Basic validation
+            if (name === '' || email === '' || message === '') {
+                alert("Please fill in all required fields.");
+                return false; // Validation failed
+            }
+
+            // Email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false; // Validation failed
+            }
+
+            // Phone number validation
+            var phoneRegex = /^\d{10}$/;
+            if (phone !== '' && !phoneRegex.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false; // Validation failed
+            }
+
+            // You can add more advanced validation here if needed
+
+            return true; // All validation passed
+        }
+    </script>
+</body>
+</html>

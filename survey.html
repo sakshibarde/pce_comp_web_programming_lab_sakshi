@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="form.css" />
+    <script src="sha256.js"></script> <!-- Include SHA-256 library -->
+    <script>
+      function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var number = document.getElementById("number").value;
+
+        if (firstName == "" || lastName == "" || email == "" || number == "") {
+          alert("All fields must be filled out");
+          return false;
+        }
+
+        // Validate email format
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.match(emailRegex)) {
+          alert("Invalid email address");
+          return false;
+        }
+
+        // Hash phone number
+        var hashedNumber = sha256(number);
+
+        // Replace original phone number with hashed one
+        document.getElementById("number").value = hashedNumber;
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row col-md-6 col-md-offset-3">
+        <div class="panel panel-primary">
+          <div class="panel-heading text-center">
+            <h1>Survey Form</h1>
+          </div>
+          <div class="panel-body">
+            <form action="connect.php" method="post" onsubmit="return validateForm()">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  name="firstName"/>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  name="lastName"/>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <div>
+                  <label for="male" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="gender"
+                      value="m"
+                      id="male"
+                    />Male</label>
+                  <label for="female" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="gender"
+                      value="f"
+                      id="female"
+                    />Female</label>
+                  <label for="others" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="gender"
+                      value="o"
+                      id="others"
+                    />Others</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email"/>
+              </div>
+              <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="number"
+                  name="number" />
+              </div>
+              <div class="form-group">
+                <label for="hearAbout">How did you hear about us?</label>
+                <select class="form-control" id="hearAbout" name="hearAbout">
+                  <option value="social_media">Social Media</option>
+                  <option value="friend">From a Friend</option>
+                  <option value="search_engine">Search Engine</option>
+                  <option value="advertisement">Advertisement</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="satisfaction">How satisfied are you with our service?</label>
+                <select class="form-control" id="satisfaction" name="satisfaction">
+                  <option value="very_satisfied">Very Satisfied</option>
+                  <option value="satisfied">Satisfied</option>
+                  <option value="neutral">Neutral</option>
+                  <option value="unsatisfied">Unsatisfied</option>
+                  <option value="very_unsatisfied">Very Unsatisfied</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="recommendation">Would you recommend us to others?</label>
+                <div>
+                  <label for="yes_recommend" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="recommendation"
+                      value="yes"
+                      id="yes_recommend"
+                    />Yes</label>
+                  <label for="no_recommend" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="recommendation"
+                      value="no"
+                      id="no_recommend"
+                    />No</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="travelWebsite">Which traveling website do you use most frequently?</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="travelWebsite"
+                  name="travelWebsite"/>
+              </div>
+              <div class="form-group">
+                <label for="favoriteDestination">What is your favorite travel destination?</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="favoriteDestination"
+                  name="favoriteDestination"/>
+              </div>
+              <input type="submit" class="btn btn-primary" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

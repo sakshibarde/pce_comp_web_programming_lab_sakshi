@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sikkim.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <title>KERALA</title>
+  <style>
+    .tab-contents {
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      padding: 40px;
+      border-radius: 10px;
+      display: none;
+    }
+    .logo{
+      width: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 20px;
+    }
+    .welcome{
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img src="images/logo.jpg" style="height: 100px; width: 150px;">
+  </div>
+  <section>
+    <header>
+      <div class="header">
+        <div class="container">
+          <span class="slider" id="slider1"></span>
+          <span class="slider" id="slider2"></span>
+          <span class="slider" id="slider3"></span>
+          <span class="slider" id="slider4"></span>
+          <span class="slider" id="slider5"></span>
+
+          <div class="imgContainer">
+            <div class="slide_div" id="slide_1">
+              <img src="images/kerala.jpeg" class="img" id="img1" />
+              <a href="#slider1" class="button" id="button1"></a>
+            </div>
+            <div class="slide_div" id="slide_2">
+              <img src="images/kerala1.jpg" class="img" id="img2" />
+              <a href="#slider2" class="button" id="button2"></a>
+            </div>
+            <div class="slide_div" id="slide_3">
+              <img src="images/kerala2.jpg" class="img" id="img3" />
+              <a href="#slider3" class="button" id="button3"></a>
+            </div>
+            <div class="slide_div" id="slide_4">
+              <img src="images/kerala3.jpeg" class="img" id="img4" />
+              <a href="#slider4" class="button" id="button4"></a>
+            </div>
+            <div class="slide_div" id="slide_5">
+              <img src="images/kerala4.jpeg" class="img" id="img5" />
+              <a href="#slider5" class="button" id="button5"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="welcome">
+        <h1>Kerala</h1>
+      </div>
+
+      <div class="options">
+        <nav class="content-titles">
+          <ul>
+            <li>
+              <a class="tab-links active-link" onclick="opentab('overview')">Overview</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('best-time-to-visit')">Best Time to Visit</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('how-to-reach')">How to Reach</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('places-to-visit')">Places to Visit</a>
+            </li>
+            <li>
+              <a class="tab-links" onclick="opentab('things-to-do')">Things to Do</a>
+            </li>
+            
+            <li><a class="tab-links" onclick="opentab('map')">Map</a></li>
+          </ul>
+        </nav>
+        <div class="tab-contents active-tab" id="overview" style="background-color: #d0f6cf">
+          <h2>About <span>Kerala</span></h2>
+          <br />
+          <p>
+            Encompassing serenity, Kerala is a charming South Indian destination that should be in every traveller’s bucket list. Adorned with the emerald backwaters, sprawling and lush tea estates, pristine hill stations, and azure Arabian Sea, Kerala tourism boasts numerous tourist places with which you will fall in love instantly
+            In North Kerala, districts like Kasaragod, Kannur, Wayanad, Kozhikode, and Malappuram have many attractions for the tourists. Wayanad offers a lovely hill station holiday whereas Kozhikode offers a great beach holiday and an opportunity of bird watching.
+            In Central Kerala, Palakkad, Thrissur, Ernakulam, and Idukki have a number of experiences in store. Thrissur is a culture aficionado’s paradise while Idukki and Ernakulam are the hotspots for nature lovers.
+            In South Kerala Kottayam, Pathanamthitta, Alappuzha, Kollam, Thiruvananthapuram are ready with a variety of experiences like backwaters and houseboat in Alappuzha; beach vacations in Kollam, and a glance at rich history of Kerala at Pathanamthitta.
+            Kerala tourism isn’t only about imbibing natural beauty but its rich culture that is festooned with dances, festivals, delectable cuisine, literature, Ayurveda therapies, and art & craft. Kerala has it all, and you have to see it, to believe it.
+            The state opens its doors to beach holidays with picturesque beaches like Varkala, Kovalam and Marari. Giving a good run to pristine beaches are the backwaters of Kerala that can be best experienced in Alleppey and Kumarakom.
+            Kerala's beach and backwaters are accompanied by its lush and surreal hill stations, of which Munnar, Wayanad and Vagamon are the best places to visit in the summer season. With Western Ghats covering some of its area, Kerala is the best wildlife destination and is perfect for birdwatching.
+            We, at Tour My India would be happy to help you explore the scenic destination of Kerala, and therefore, offer to you the finest Kerala holiday packages and deals. With our best Kerala travel packages, you can rest assured for a hassle free and memorable holiday in Kerala.
+          </p>
+          <br />
+          <p>
+           1. Alleppey: Kerala’s favourite backwater tourist destination, Alleppey is famed for offering an incredible experience of staying and cruising in a traditional houseboat.
+           2.Munnar: Adorned with myriad tea estates and rolling hills, Munnar is without a doubt the best hill station in Kerala. It is a must visit tourist place in Kerala for a relaxing holiday as well as relishing adventure activities.
+           3. Kochi: A cosmopolitan city with a bustling port, Kochi is where the modern lifestyle meets the traditional one. The city is the perfect reflection of Kerala and has many experiences up its sleeves.
+           4. Thekkady: Fringing the popular Periyar National Park, Thekkady is a hill station in Kerala that attracts many nature and wildlife lovers. It is one of the best places to enjoy the scenic beauty of Kerala.
+           5. Thrissur: The cultural capital, Thrissur does not need an introduction. From drawing a large crowd on its Temple Festival (Thrissur Pooram) to being an abode to several cultural centres, the city is a must-visit in Kerala.
+           6. Kovalam: A small coastal town with some of the best beaches of Kerala, Kovalam is a place where you get to enjoy sunbathing, swimming, herbal body toning massages, special cultural programmes and catamaran cruising.
+           7. Wayanad: Dotted with camping sites, trekking trails and gorgeous waterfalls, Wayanad is a peaceful and picturesque hill station that is perfect for holiday in Kerala.
+           8. Kumarakom: The favourite place for luxury seekers desiring a holiday on the backwaters of Kerala, Kumarakom is replete with luxury houseboats and resorts promising an experience of a lifetime.
+           9.Kozhikode: Home to serene beaches and historic sites, Kozhikode is where Vasco Da Gama landed when he discovered India. The city is a perfect place to get an authentic experience of Kerala.
+          10. Thiruvananthapuram: The capital city, Thiruvananthapuram is where you can find authentic Kerala’s food, intriguing sights and a cluster of Victorian museums; it’s a place of many experiences.
+          </p>
+          <br />
+          <p>
+            
+          </p>
+          <br />
+          <p>
+            
+          </p>
+         
+        </div>
+
+        <div class="tab-contents" id="best-time-to-visit" style="background-color: #dcbfff">
+          <h2>Best Time to Visit in <span>Kerala</span></h2>
+          <br />
+          <h3>Summer in Kerala</h3>
+          <p>
+            Summer season in Kerala commences from the month of March and continues till May. 
+            During this, Kerala remains hot and humid with intermittent rainfalls. However, the evenings are quite pleasant and one can think of planning a visit in summer in Kerala.
+            In fact summer is a good time to enjoy beach activities at the Thiruvananthapuram, Kovalam, Varkala and sightseeing at Alleppey, Wayanad and Munnar. 
+            Summer is also the season of celebrating elephant festivals like ThrissurPooram, which takes place in late April or early May each year.
+          </p>
+          <br />
+          <h3>Monsoon in Kerala</h3>
+          <p>
+            Monsoon season in Kerala begins from month of June and last till September. 
+            Expect heavy rains, which by the enhance the beauty of the entire state making it more green and alluring. 
+            Monsoon is an ideal time for Ayurvedic treatments, it is believed that Ayurveda therapies work best in the rainy season as the pores of the skin opens during this season. 
+            Also, it is a perfect time to enjoy sightseeing at different destinations like Idukki, Kovalam and Wayanad.
+          </p>
+          <br />
+          <h3>Winter in Kerala The</h3>
+          <p>
+            October marks the onset of winter season in Kerala that continues till the month of March.
+            During this season, the weather remains pleasant and ideal for planning a perfect holiday in Kerala.
+            It is in fact the best time to explore every part of the state, right from hill stations to the beach getaways or the backwaters.
+            Winter season is also ideal for a visit particularly to Kottayam, Alleppey, Varkala, Kozhikode and Thekkady.
+          </p>
+        </div>
+        <div class="tab-contents" id="how-to-reach" style="background-color: #f1f5a8">
+          <h2>How to Reach <span>Kerala</span></h2>
+          <br />
+          <p>
+            Kerala is a small state located in the south-western part of India. 
+            Kerala is edged by a 580 km long coastline. 
+            Towards its west, there is the Arabian Sea and towards its east, there is the Eastern Ghats, which act as a differentiation point between Tamil Nadu and Kerala.
+          </p>
+          <br />
+          <h3>By Air:</h3>
+          <p>
+            There are three airports in the state:
+
+            Thiruvananthapuram International Airport, 10 km from Thiruvananthapuram (Southern Part of Kerala)Cochin International Airport, Ernakulam (Central Park of Kerala)Karipur or Calicut International Airport, 27 km from Kozhikode (Northern Part of Kerala)
+            There are 3 more airports which are quite close to Kerala:
+            
+            Mangalore International AirportCoimbatore International AirportMadurai Airport
+            Kerala is accessible by air from most parts of India, especially from South-Eastern towns, namely Bangalore, Chennai and Hyderabad.
+          </p>
+          <br />
+          <h3>By Road:</h3>
+          <p>
+            There are three major highways which connect Kerala with the rest of India i.e. National Highways 17, 47 and 49. 
+            These three highways are directly connected with Karnataka and Tamil Nadu.
+          </p>
+          <br />
+          <h3>By Rail:</h3>
+          <p>
+            There are 200 railway stations which connect Kerala with the rest of India. 
+            Every district and town of Kerala can be reached by railways other than its hill stations, Wayanad, Munnar and Thekkady. 
+            Railways services also link the state with many metropolitan cities like New Delhi, Kolkata and Chennai.
+          </p>
+        </div>
+        <div class="tab-contents" id="places-to-visit" style="background-color: #f7ded0">
+          <h2>Places to visit in <span>Kerala</span></h2>
+          <br />
+          <h3>Munnar</h3>
+          <p>
+            If you have ever seen romanticised scenes in Bollywood songs set on a hill trail covered with green tea meadows, then you know what Munnar looks like. This hill station is widely famous for enchanting experiences amidst tea gardens and mesmerising sunrises and sunsets. Additionally, Munnar is a hotspot for wildlife and forest lovers, as the hill station has several wildlife sanctuaries and national parks in and around it.
+            Along with uncommon species of animals like the Tiger, Leopard, and Sambar deer, Munnar is one of the few locations to witness the blue fields of Neelakurinji, a majestic and rare flower species that predominantly grows in the Western Ghats. 
+            If you are looking for a trip where you can be in the midst of nature, then this is the best place to be in Kerala.
+            <br>
+
+            Best Time to Visit : Throughout the year.
+            Top Places to Visit : Blossom Park, Attukal Waterfalls, Kundala Lake, Pothamedu Viewpoint, Marayoor Dolmens, Eravikulam National Park and Cheeyappara Waterfalls.
+          </p>
+          <br />
+          <h3>Alleppe</h3>
+          <p>
+            Alleppey is one of the most scenic and famous locations in Kerala. As the pristine backwaters and boat pictures could be seen ubiquitously depicting the state, it would not be wrong to say it is the poster city of Kerala. It was also named the "Venice of the East" by Lord Curzon during the English colonisation period. Massively known for the Snake boat race or officially called Nehru Trophy Boat Race, brings people in massive figures to Kayamkulam Lake.
+            Moreover, from hosting the backwater races, Kerala also attracts tourists to enjoy the houseboat rides and other water adventure activities here. Furthermore, Kerala is also a birdwatching paradise for nature enthusiasts, especially the Pathiramanal island. Also, the fascinating experience of shopping at Canal Bazaar is one experience that everyone loves.
+
+
+            Best Time to Visit : August to March.
+            Top Places to Visit : Alappuzha Beach, Marari Beach, Punnamada Lake, Revikarnukaran Museum.
+          </p>
+          <br />
+          <h3>Thekkady</h3>
+          <p>
+            Thekkady is a plantation town mostly famous for its rich natural surroundings, wildlife, and spices. 
+            This place is a heartland of spies, and you can find a lot of spices being farmed. Whatsoever, the town is comprehensively known for the Periyar wildlife region. 
+            A considerable area of Thekkady is encapsulated by Periyar National Park. There is a lot you can do in the national park itself. 
+            Also, the park is a tiger reserve; however, it has a very thin chance of encountering tigers due to their very low density. 
+            The only tiger reserve you can take a walk on, Periyar tiger reserve has walking trails inside the tiger reserve but only under the guidance of experts. Walking, trekking, and encountering wild animals in the park is one of the best things to do in Thekkady.
+            Periyar Lake, which comes under the area of the park, also boasts a pristine surrounding that is loved by many. 
+           Along with that, you can take a boat ride or do rafting here. Above all, most of the perks go to the indigenous tribes that live around as the handlers in the park are people from the tribe. You can also visit the tribal areas, watch their ways, see the tribal dance, or dance with them. Pun intended!
+           Top Places to Visit : Periyar National Park, Elephant Junction, Periyar Lake, and Spice Walk.
+           Best Time to Visit : Between September and March are the most pleasant months.
+           
+          </p>
+          <br />
+          <h3>Kochi (Cochin)</h3>
+          <p>
+            Located in the heart of Kerala, Cochin stands as a quintessential destination, offering an immersive experience of the state's essence. Serving as the ideal starting point for a Kerala exploration, Cochin encapsulates the captivating blend of tradition and modernity. 
+            Beyond its familiar name, the encompassing Ernakulam is a treasure trove along the Arabian Sea.
+            A city that seamlessly marries contemporary vigour with ancient elegance, Cochin showcases a cultural tapestry woven by British, Dutch, and Portuguese influences. Initially a trading hub, Ernakulam transformed into the bustling commercial capital of Kerala, adorned by remnants of colonial encounters. 
+            Known as the 'Queen of the Arabian Sea,' Cochin's harbour remains a testament to its historical significance, attracting diverse cultures including the British, Dutch, Arabs, Portuguese, and Chinese, leaving an indelible mark on its landscape.
+            
+            Best Time to Visit : May to March.
+           
+          </p>
+        </div>
+        <div class="tab-contents" id="things-to-do" style="background-color: #e5e1da">
+          <h2>Things to do in <span>kerala</span></h2><br>
+          <p>
+            Kerala tourism offers a plethora of activities for tourists in each and every destination. From mesmerizing backwater tourism to thrilling water adventure sports, from relaxing beach activities to captivating nature exploration, and from wildlife encounters to immersing in rich culture, visitors can enjoy every minute of their holiday in Kerala and create unforgettable memories.
+            If you are traveling with kids, a visit to the museum is a must. Moreover, if you are on a honeymoon in Kerala, your holiday is bound to be truly unforgettable. Romantic places like Munnar, Wayanad, Periyar, Kumarakom, and Alleppey are the best choices for couples. Even for those on a family vacation, there are a variety of places to explore. Additionally, while on a trip to Kerala, one must not miss the opportunity to shop for spices, tea, coir products, handicrafts, and indulge in the flavorsome seafood.
+            Here are some of the best things to do on a Kerala Tour:
+            Backwater CruiseForest, 
+            TrekkingWildlife, 
+            ExplorationWitness, 
+            Vibrant, 
+            FestivalsGo for AdventureExperience Village ,
+            LifeAyurvedic Spa and Massage Houseboat. 
+            StayExplore ,
+            HeritageHill, 
+            StationsVisit ,
+            TemplesExplore ,
+            BeachesCulinary Experiences
+          </p>
+          <br />
+          <p>
+            Embrace the Aura of Faith: Explore Kerala's Temples
+            Kerala's temple circuit offers a profound journey into the world of divinity, with its ancient shrines dedicated to Hindu gods and goddesses, and beautiful architectural masterpieces. Embark on a pilgrimage and delve into Kerala's spiritual tapestry, where devotion and architectural wonders harmoniously coexist.
+            In addition to providing a glimpse into Kerala's rich cultural past, a visit to these temples offers an opportunity for reflection, peace, and a deeper connection with the divine.
+            Some famous temples to visit in Kerala are:
+            Sabarimala, 
+            TempleGuruvayu,  
+            TemplePadmanabhaswamy, 
+            TempleAttukal Bhagavathy, 
+            TempleChottanikkara Devi, 
+            TempleAmbalapuzha, 
+            Sree Krishna, 
+            TempleEttumanoor, 
+            Mahadeva TempleThirunelli, 
+            TempleMannarasala Nagaraja, 
+            TempleVadakkunnathan Temple.
+            <br>
+            Backwater cruising is one of the most beautiful experiences that Kerala has to offer and is considered one of the top things to do in the region. The extensive network of interconnected canals, rivers, lakes, and lagoons that comprise Kerala's backwaters meander through picturesque villages, swaying palm trees, and lush rice fields. 
+            Embarking on a backwater boat ride in Kerala is akin to stepping into a serene and enchanting universe.
+            To truly immerse yourself in the unhurried rhythm of life along the rivers of Kerala, opt for a backwater cruise. 
+            Board a "kettuvallam," a traditional houseboat, and embark on a Kerala tour that transports you to a realm untouched by the chaos and commotion of modern life.
+          </p>
+        </div>
+        <div class="tab-contents" id="map" style="width: 1000px; height: 400px"></div>
+      </div>
+    </header>
+  </section>
+
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+        if (tabcontent.id === tabname) {
+          tabcontent.classList.add("active-tab");
+        }
+      }
+      event.currentTarget.classList.add("active-link");
+    }
+
+
+    // Creating map options
+    var mapOptions = {
+            center: [27.2134142,88.6797401],
+            zoom:9
+        }
+
+
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        // Creating a marker
+        var marker = L.marker([10.0889,77.0595]).addTo(map);
+        var marker = L.marker([9.4981,76.3388]).addTo(map);
+        var marker = L.marker([9.6031,77.1615]).addTo(map);
+        var marker = L.marker([9.9312, 76.2673]).addTo(map);
+       
+
+      
+  </script>
+</body>
+
+</html>
